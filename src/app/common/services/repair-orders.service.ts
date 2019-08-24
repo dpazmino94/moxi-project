@@ -12,10 +12,26 @@ export class RepairOrdersService extends HttpBaseService{
     super();
   }
 
+  /**
+   * This gets the list of Repair Orders or with a custom url it can get only one Repair Order
+   *
+   * @param {string} customOrder
+   * @param {*} htttpOptions
+   * @returns {Promise<any>}
+   * @memberof RepairOrdersService
+   */
   getRepairOrders(customOrder: string, htttpOptions): Promise<any>  {
     return this.http.get(this.getURL() + 'service/repairorders/' + customOrder, htttpOptions).toPromise();
   }
 
+  /**
+   * This starts the Repair Order
+   *
+   * @param {number} orderNumber
+   * @param {*} htttpOptions
+   * @returns {Promise<any>}
+   * @memberof RepairOrdersService
+   */
   startRepairOrder(orderNumber: number, htttpOptions): Promise<any>  {
     return this.http.post(this.getURL() + 'service/repairorder/' + orderNumber + '/start', null, htttpOptions).toPromise();
   }

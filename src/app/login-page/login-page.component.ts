@@ -53,7 +53,6 @@ export class LoginPageComponent implements OnInit {
       if (!response.error) {
         localStorage.setItem('token', response.token);
         this.router.navigateByUrl('/repair-orders')
-        console.log(localStorage.getItem('token'));
       } 
     }).catch(error => {
       this.openDialog('There was an error!', error.error.message);
@@ -77,6 +76,4 @@ export class LoginPageComponent implements OnInit {
     });
     dialogRef.afterClosed();
   }
-
-
 }

@@ -21,6 +21,6 @@ export class LoginService extends HttpBaseService{
    * @memberof LoginService
    */
   login(dealerUserModel: DealerUserModel): Promise<any> {
-    return this.http.post(this.getURL() + LOGIN_CONSTANTS.API_URL, dealerUserModel).toPromise()
+    return this.http.post(this.getURL() + LOGIN_CONSTANTS.API_URL, dealerUserModel).toPromise();
   }
 }
