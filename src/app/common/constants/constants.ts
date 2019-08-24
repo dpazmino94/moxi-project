@@ -1,5 +1,6 @@
 export class COMMON_CONSTANTS {
 	public static STATUS_OK = 200;
+	public static CONTENT_TYPE = 'application/x-www-form-urlencoded';
 }
 
 export class LOGIN_CONSTANTS {

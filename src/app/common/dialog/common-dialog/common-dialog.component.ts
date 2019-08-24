@@ -5,7 +5,7 @@ import { DialogDataModel } from '../../Models/DialogDataModel';
 @Component({
   selector: 'app-common-dialog',
   templateUrl: './common-dialog.component.html',
-  styleUrls: ['./common-dialog.component.scss']
+  styleUrls: []
 })
 
 export class CommonDialogComponent {

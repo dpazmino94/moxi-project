@@ -1,3 +1,4 @@
+import { COMMON_CONSTANTS } from './../common/constants/constants';
 import { CommonDialogComponent } from './../common/dialog/common-dialog/common-dialog.component';
 import { RepairOrdersService } from './../common/services/repair-orders.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
@@ -9,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-repair-orders',
   templateUrl: './repair-orders.component.html',
-  styleUrls: ['./repair-orders.component.scss']
+  styleUrls: []
 })
 export class RepairOrdersComponent implements OnInit {
   // Service Variable
@@ -21,7 +22,7 @@ export class RepairOrdersComponent implements OnInit {
   htttpOptions = {
     headers: new HttpHeaders({
       'Authorization': localStorage.getItem('token'),
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': COMMON_CONSTANTS.CONTENT_TYPE
     })
   };
   constructor(
