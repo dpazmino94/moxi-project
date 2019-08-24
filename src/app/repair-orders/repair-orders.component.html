@@ -1,0 +1,53 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Final Moxi Project</span>
+    <span class="menu_spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <i class="material-icons">menu</i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onLogOut()">Log out</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+  <mat-card-title>Scheduled Repair Orders</mat-card-title>
+  <table style="width:100%">
+    <tr>
+      <th>Logo</th>
+      <th>ID</th>
+      <th>Customer Name</th>
+      <th>Vehicle Name</th>
+      <th>Service Status</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let openItem of repairOrdersDefault">
+      <td><img [src]="openItem.dealershipLogoUrl" alt=""></td>
+      <td>{{openItem.id}}</td>
+      <td>{{openItem.customerName}}</td>
+      <td>{{openItem.vehicleName}}</td>
+      <td>{{openItem.serviceStatus}}</td>
+      <td><button mat-raised-button color="primary" (click)="startRepairOrder(openItem.id)">Start Repair Order</button>
+      </td>
+    </tr>
+  </table>
+</mat-card>
+<mat-card>
+  <mat-card-title>Started Repair Orders</mat-card-title>
+  <table style="width:100%">
+    <tr>
+      <th>Logo</th>
+      <th>ID</th>
+      <th>Customer Name</th>
+      <th>Vehicle Name</th>
+      <th>Service Status</th>
+    </tr>
+    <tr *ngFor="let closedItem of repairOrdersStarted">
+      <td><img [src]="closedItem.dealershipLogoUrl" alt=""></td>
+      <td>{{closedItem.id}}</td>
+      <td>{{closedItem.customerName}}</td>
+      <td>{{closedItem.vehicleName}}</td>
+      <td>{{closedItem.serviceStatus}}</td>
+    </tr>
+  </table>
+</mat-card>
