@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Online Store</span>
+    <span class="menu_spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <i class="material-icons">menu</i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Log out</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="online_store_container">
+  <div class="banner">
+
+  </div>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-3">A</div>
+    <div class="p-col-12 p-md-6 p-lg-3">B</div>
+    <div class="p-col-12 p-md-6 p-lg-3">C</div>
+    <div class="p-col-12 p-md-6 p-lg-3">D</div>
+</div>
+  <div class="products_grid">
+    <div class="single_product" *ngFor="let product of productsCatalogData" >
+        <img [src]="product.productImage" alt="">
+        <h3>{{product.productTitle}}</h3>
+        <h6>{{product.productPrice}}</h6>
+    </div>
+  </div>
+  <div class="footer">
+    <a href="">
+      <h5>Contacto</h5>
+    </a>
+    <a href="">
+      <h5>Politica de envíos</h5>
+    </a>
+    <a href="">
+      <h5>Sobre nosotros</h5>
+    </a>
+  </div>
+</div>
