@@ -17,13 +17,15 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
 import { RepairOrdersComponent } from './repair-orders/repair-orders.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { OnlineStoreComponent } from './online-store/online-store.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     CommonDialogComponent,
-    RepairOrdersComponent
+    RepairOrdersComponent,
+    OnlineStoreComponent
   ],
   exports: [
     MatFormFieldModule
