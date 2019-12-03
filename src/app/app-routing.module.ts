@@ -1,3 +1,4 @@
+import { ProductItemComponent } from './product-item/product-item.component';
 import { OnlineStoreComponent } from './online-store/online-store.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,7 @@ const routes: Routes = [
   {
     path: '', redirectTo: 'login',
     pathMatch: 'full'
-  }, 
+  },
   {
     path: 'login', component: LoginPageComponent
   },
@@ -17,7 +18,10 @@ const routes: Routes = [
   },
   {
     path: 'online-store', component: OnlineStoreComponent
-  }, 
+  },
+  {
+    path: 'product-item', component: ProductItemComponent
+  },
 ];
 
 @NgModule({

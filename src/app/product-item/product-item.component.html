@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Online Store</span>
+    <span class="menu_spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <i class="material-icons">menu</i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Log out</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="exzoom" id="exzoom">
+  <!-- Images -->
+  <div class="exzoom_img_box">
+    <ul class='exzoom_img_ul'>
+      <li><img src="1.png" /></li>
+      <li><img src="2.png" /></li>
+      <li><img src="3.png" /></li>
+      <li><img src="4.png" /></li>
+      <li><img src="5.png" /></li>
+    </ul>
+  </div>
+  <!-- <a href="https://www.jqueryscript.net/tags.php?/Thumbnail/">Thumbnail</a> Nav-->
+  <div class="exzoom_nav"></div>
+  <!-- Nav Buttons -->
+  <p class="exzoom_btn">
+    <a href="javascript:void(0);" class="exzoom_prev_btn"> < </a> 
+    <a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
+  </p>
+</div>
+
+<div>
+
+</div>

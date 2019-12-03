@@ -12,12 +12,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+
+
 import { CommonDialogComponent } from './common/dialog/common-dialog/common-dialog.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { RepairOrdersComponent } from './repair-orders/repair-orders.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { OnlineStoreComponent } from './online-store/online-store.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { OnlineStoreComponent } from './online-store/online-store.component';
     LoginPageComponent,
     CommonDialogComponent,
     RepairOrdersComponent,
-    OnlineStoreComponent
+    OnlineStoreComponent,
+    ProductItemComponent
   ],
   exports: [
     MatFormFieldModule
@@ -40,9 +45,10 @@ import { OnlineStoreComponent } from './online-store/online-store.component';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
+    MatGridListModule,
     MatDialogModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   entryComponents: [CommonDialogComponent],
   providers: [
