@@ -7,6 +7,11 @@
 */
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$theme_gray: #575859;
+$theme_dark_green: #72A624;
+$theme_light_green: #BED996;
+$theme_white: #F2F2F2;
+$theme_black: #262626;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -25,8 +30,11 @@ table {
 	text-align: center;
 }
 
-img {
+.product_container img {
 	width: 6rem;
+}
+.product_body img {
+	width: 100%;
 }
 
 .menu_spacer {
@@ -69,6 +77,30 @@ a {
 	text-align: center;
 }
 
+//=============== Online Store Page ===============
+.product_body {
+	display: flex;
+	margin: 5% 10% 0;
+	.product_col1, .product_col2 {
+		width: 50%;
+	}
+
+	.buy_button {
+		width: 10rem;
+		background-color: $theme_dark_green;
+		color: $theme_white;
+	}
+
+	.ui-galleria-filmstrip-wrapper {
+		margin-top: 30px !important;
+	}
+}
+
+.product_quantity {
+	color: $theme_black;
+}
+
+//=============== FOOTER ===============
 .footer {
 	display: flex;
 	width: 100%;

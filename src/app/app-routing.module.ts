@@ -7,7 +7,7 @@ import { RepairOrdersComponent } from './repair-orders/repair-orders.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'login',
+    path: '', redirectTo: 'online-store',
     pathMatch: 'full'
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'online-store', component: OnlineStoreComponent
   },
   {
-    path: 'product-item', component: ProductItemComponent
+    path: 'product-item/:id', component: ProductItemComponent
   },
 ];
 

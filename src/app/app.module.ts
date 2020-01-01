@@ -6,22 +6,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
-// Angular Material imports
+// Angular Material Imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
-
-
-import { CommonDialogComponent } from './common/dialog/common-dialog/common-dialog.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import { RepairOrdersComponent } from './repair-orders/repair-orders.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+
+
+// Prime NG Imports
+import { GalleriaModule } from 'primeng/galleria';
+
+// Components Imports
+import { CommonDialogComponent } from './common/dialog/common-dialog/common-dialog.component';
+import { RepairOrdersComponent } from './repair-orders/repair-orders.component';
 import { OnlineStoreComponent } from './online-store/online-store.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +40,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
     CommonDialogComponent,
     RepairOrdersComponent,
     OnlineStoreComponent,
-    ProductItemComponent
+    ProductItemComponent,
   ],
   exports: [
     MatFormFieldModule
@@ -49,6 +59,10 @@ import { ProductItemComponent } from './product-item/product-item.component';
     MatDialogModule,
     MatMenuModule,
     MatToolbarModule,
+    MatSelectModule,
+    GalleriaModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   entryComponents: [CommonDialogComponent],
   providers: [

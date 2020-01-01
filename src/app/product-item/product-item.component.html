@@ -11,26 +11,49 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div class="exzoom" id="exzoom">
-  <!-- Images -->
-  <div class="exzoom_img_box">
-    <ul class='exzoom_img_ul'>
-      <li><img src="1.png" /></li>
-      <li><img src="2.png" /></li>
-      <li><img src="3.png" /></li>
-      <li><img src="4.png" /></li>
-      <li><img src="5.png" /></li>
-    </ul>
+<div class="product_body">
+  <div class="product_col1">
+    <p-galleria [images]="images" panelWidth="500" panelHeight="313" [showCaption]="false"></p-galleria>
   </div>
-  <!-- <a href="https://www.jqueryscript.net/tags.php?/Thumbnail/">Thumbnail</a> Nav-->
-  <div class="exzoom_nav"></div>
-  <!-- Nav Buttons -->
-  <p class="exzoom_btn">
-    <a href="javascript:void(0);" class="exzoom_prev_btn"> < </a> 
-    <a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
-  </p>
+  <div class="product_col2">
+    <h1>
+      Awesome Title
+    </h1>
+    <p>
+      Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.
+    </p>
+    <mat-form-field>
+      <mat-label>Cantidad</mat-label>
+      <mat-select #fontSize value="16px" color="dark" (selectionChange)="null">
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5">5</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <h2>
+      $99.99
+    </h2>
+    <button class="buy_button" mat-raised-button> Pedir Ahora</button>    <br/> 
+    <button class="onlyText_button" mat-button> Política de envío</button>
+
+  </div>
 </div>
-
-<div>
-
+<div class="footer">
+  <div>
+    <a href="">
+      <h5>Contacto</h5>
+    </a>
+  </div>
+  <div>
+    <a href="">
+      <h5>Politica de envíos</h5>
+    </a>
+  </div>
+  <div>
+    <a href="">
+      <h5>Sobre nosotros</h5>
+    </a>
+  </div>
 </div>
