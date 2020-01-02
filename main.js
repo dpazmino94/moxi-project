@@ -34,11 +34,13 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./online-store/online-store.component */ "./src/app/online-store/online-store.component.ts");
-/* harmony import */ var _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login-page/login-page.component */ "./src/app/login-page/login-page.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./repair-orders/repair-orders.component */ "./src/app/repair-orders/repair-orders.component.ts");
+/* harmony import */ var _product_item_product_item_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product-item/product-item.component */ "./src/app/product-item/product-item.component.ts");
+/* harmony import */ var _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./online-store/online-store.component */ "./src/app/online-store/online-store.component.ts");
+/* harmony import */ var _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login-page/login-page.component */ "./src/app/login-page/login-page.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./repair-orders/repair-orders.component */ "./src/app/repair-orders/repair-orders.component.ts");
+
 
 
 
@@ -47,26 +49,29 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     {
-        path: '', redirectTo: 'login',
+        path: '', redirectTo: 'online-store',
         pathMatch: 'full'
     },
     {
-        path: 'login', component: _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_2__["LoginPageComponent"]
+        path: 'login', component: _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_3__["LoginPageComponent"]
     },
     {
-        path: 'repair-orders', component: _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_5__["RepairOrdersComponent"]
+        path: 'repair-orders', component: _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_6__["RepairOrdersComponent"]
     },
     {
-        path: 'online-store', component: _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_1__["OnlineStoreComponent"]
+        path: 'online-store', component: _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_2__["OnlineStoreComponent"]
+    },
+    {
+        path: 'product-item/:id', component: _product_item_product_item_component__WEBPACK_IMPORTED_MODULE_1__["ProductItemComponent"]
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -142,12 +147,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
 /* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm5/grid-list.es5.js");
-/* harmony import */ var _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./common/dialog/common-dialog/common-dialog.component */ "./src/app/common/dialog/common-dialog/common-dialog.component.ts");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./repair-orders/repair-orders.component */ "./src/app/repair-orders/repair-orders.component.ts");
-/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
-/* harmony import */ var _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./online-store/online-store.component */ "./src/app/online-store/online-store.component.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var primeng_galleria__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! primeng/galleria */ "./node_modules/primeng/galleria.js");
+/* harmony import */ var primeng_galleria__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(primeng_galleria__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./common/dialog/common-dialog/common-dialog.component */ "./src/app/common/dialog/common-dialog/common-dialog.component.ts");
+/* harmony import */ var _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./repair-orders/repair-orders.component */ "./src/app/repair-orders/repair-orders.component.ts");
+/* harmony import */ var _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./online-store/online-store.component */ "./src/app/online-store/online-store.component.ts");
+/* harmony import */ var _product_item_product_item_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./product-item/product-item.component */ "./src/app/product-item/product-item.component.ts");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 
 
 
@@ -156,7 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Angular Material imports
+// Angular Material Imports
 
 
 
@@ -166,6 +178,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+// Prime NG Imports
+
+// Components Imports
+
+
+
+
+// Firebase
 
 
 
@@ -177,9 +198,10 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
                 _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_7__["LoginPageComponent"],
-                _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_14__["CommonDialogComponent"],
-                _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_16__["RepairOrdersComponent"],
-                _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_19__["OnlineStoreComponent"]
+                _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_19__["CommonDialogComponent"],
+                _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_20__["RepairOrdersComponent"],
+                _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_21__["OnlineStoreComponent"],
+                _product_item_product_item_component__WEBPACK_IMPORTED_MODULE_22__["ProductItemComponent"],
             ],
             exports: [
                 _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatFormFieldModule"]
@@ -195,13 +217,17 @@ var AppModule = /** @class */ (function () {
                 _angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCardModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"],
                 _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_13__["MatGridListModule"],
-                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__["MatDialogModule"],
-                _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__["MatMenuModule"],
-                _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_18__["MatToolbarModule"]
+                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_14__["MatDialogModule"],
+                _angular_material_menu__WEBPACK_IMPORTED_MODULE_15__["MatMenuModule"],
+                _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_16__["MatToolbarModule"],
+                _angular_material_select__WEBPACK_IMPORTED_MODULE_17__["MatSelectModule"],
+                primeng_galleria__WEBPACK_IMPORTED_MODULE_18__["GalleriaModule"],
+                _angular_fire__WEBPACK_IMPORTED_MODULE_23__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_25__["environment"].firebase),
+                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_24__["AngularFirestoreModule"],
             ],
-            entryComponents: [_common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_14__["CommonDialogComponent"]],
+            entryComponents: [_common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_19__["CommonDialogComponent"]],
             providers: [
-                { provide: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__["MAT_DIALOG_DEFAULT_OPTIONS"], useValue: { hasBackdrop: true } }
+                { provide: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_14__["MAT_DIALOG_DEFAULT_OPTIONS"], useValue: { hasBackdrop: true } }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
@@ -247,6 +273,33 @@ var DialogDataModel = /** @class */ (function () {
     function DialogDataModel() {
     }
     return DialogDataModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/Models/GeneralModels.ts":
+/*!************************************************!*\
+  !*** ./src/app/common/Models/GeneralModels.ts ***!
+  \************************************************/
+/*! exports provided: OnlineStoreProductModel, ProductItemModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnlineStoreProductModel", function() { return OnlineStoreProductModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductItemModel", function() { return ProductItemModel; });
+var OnlineStoreProductModel = /** @class */ (function () {
+    function OnlineStoreProductModel() {
+    }
+    return OnlineStoreProductModel;
+}());
+
+var ProductItemModel = /** @class */ (function () {
+    function ProductItemModel() {
+    }
+    return ProductItemModel;
 }());
 
 
@@ -662,7 +715,7 @@ var LoginPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <span>Online Store</span>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [matMenuTriggerFor]=\"menu\">\n            <i class=\"material-icons\">menu</i>\n          </button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item>Log out</button>\n          </mat-menu>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>{{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a href=\"\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Politica de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <span>Online Store</span>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [matMenuTriggerFor]=\"menu\">\n            <i class=\"material-icons\">menu</i>\n          </button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item>Log out</button>\n          </mat-menu>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\" (click)=\"router.navigateByUrl('product-item/' + product.productId);\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>{{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a href=\"\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Politica de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -677,24 +730,57 @@ module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnlineStoreComponent", function() { return OnlineStoreComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _common_constants_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../common/constants/constants */ "./src/app/common/constants/constants.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/Models/GeneralModels */ "./src/app/common/Models/GeneralModels.ts");
+
+
 
 
 
 
 var OnlineStoreComponent = /** @class */ (function () {
-    function OnlineStoreComponent() {
-        // Temporary variable for the products
-        this.productsCatalogData = _common_constants_constants__WEBPACK_IMPORTED_MODULE_1__["COMMON_CONSTANTS"].PRODUCT_CATALOG_DATA;
+    function OnlineStoreComponent(db, router) {
+        this.db = db;
+        this.router = router;
         // Responsive Variables
         this.gridColums = 4;
+        // Firabase variables
+        this.itemValue = '';
+        this.items = db.collection('productos').valueChanges();
     }
     OnlineStoreComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.getScreenSize();
+        this.items.subscribe(function (data) {
+            _this.productsCatalogData = [];
+            data.forEach(function (element) {
+                var mapData = new _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__["OnlineStoreProductModel"]();
+                mapData.productId = element.id;
+                mapData.productDescription = element.decription;
+                mapData.productImage = element.images[0];
+                mapData.productPrice = element.precio;
+                mapData.productTitle = element.nombre;
+                mapData.productOrder = element.order;
+                _this.productsCatalogData.push(mapData);
+                _this.productsCatalogData = _this.productsCatalogData.sort(function (a, b) { return (a.productOrder > b.productOrder) ? 1 : -1; });
+            });
+            console.log(data);
+        });
     };
+    OnlineStoreComponent.prototype.tempCreate = function () {
+        var itemRef = this.db.collection('productos');
+        itemRef.add({
+            description: 'Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba ',
+            howToUse: 'Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 ',
+            images: ['https://i.imgur.com/38Yaapq.jpg'],
+            nombre: 'Testosterone Booster',
+            precio: '9.99',
+        });
+    };
+    // This gets the event of the window resize
     OnlineStoreComponent.prototype.getScreenSize = function () {
-        console.log(window.innerWidth);
         if (window.innerWidth > 600) {
             this.gridColums = 4;
         }
@@ -716,11 +802,117 @@ var OnlineStoreComponent = /** @class */ (function () {
             selector: 'app-online-store',
             template: __webpack_require__(/*! ./online-store.component.html */ "./src/app/online-store/online-store.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], OnlineStoreComponent);
     return OnlineStoreComponent;
 }());
 
+// COMMANDS FOR DEPLOY:
+// ng build --base-href https://dpazmino94.github.io/moxi-project/
+// ngh
+
+
+/***/ }),
+
+/***/ "./src/app/product-item/product-item.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/product-item/product-item.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Online Store</span>\n    <span class=\"menu_spacer\"></span>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n      <i class=\"material-icons\">menu</i>\n    </button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Log out</button>\n    </mat-menu>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"product_body\">\n  <div class=\"product_col1\">\n    <p-galleria [images]=\"images\" [panelWidth]=\"galeriaSize\" [panelHeight]=\"galeriaHeight\" [showCaption]=\"false\"></p-galleria>\n    <div class=\"product_uses_desktop\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.\n      </p>\n    </div>\n  </div>\n  <div class=\"product_col2\">\n    <h1>\n      Descripción\n    </h1>\n    <p>\n      Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.\n    </p>\n    <mat-form-field>\n      <mat-label>Cantidad</mat-label>\n      <mat-select #fontSize value=\"16px\" color=\"dark\" (selectionChange)=\"null\">\n        <mat-option value=\"1\">1</mat-option>\n        <mat-option value=\"2\">2</mat-option>\n        <mat-option value=\"3\">3</mat-option>\n        <mat-option value=\"4\">4</mat-option>\n        <mat-option value=\"5\">5</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <h2>\n      $99.99\n    </h2>\n    <button class=\"buy_button\" mat-raised-button> Pedir Ahora</button>    <br/> \n    <button class=\"onlyText_button\" mat-button> Política de envío</button>\n    <div class=\"product_uses_mobile\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.\n      </p>\n    </div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a href=\"\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Politica de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/product-item/product-item.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/product-item/product-item.component.ts ***!
+  \********************************************************/
+/*! exports provided: ProductItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductItemComponent", function() { return ProductItemComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+
+
+var ProductItemComponent = /** @class */ (function () {
+    function ProductItemComponent(route) {
+        this.route = route;
+        // Variables that controls the size for the galeria
+        this.galeriaWidth = 500;
+        this.galeriaHeight = 313;
+    }
+    ProductItemComponent.prototype.ngOnInit = function () {
+        this.route.params.subscribe(function (params) {
+            console.log(params['id']); // (+) converts string 'id' to a number
+        });
+        this.images = [];
+        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
+        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
+        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
+        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
+        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
+        this.getScreenSize();
+    };
+    // This gets the event of the window resize
+    ProductItemComponent.prototype.getScreenSize = function () {
+        console.log(window.innerWidth);
+        if (window.innerWidth > 1900) {
+            this.galeriaWidth = 800;
+        }
+        if (window.innerWidth > 1700 && window.innerWidth < 1900) {
+            this.galeriaWidth = 700;
+        }
+        if (window.innerWidth < 1700) {
+            this.galeriaWidth = 600;
+        }
+        if (window.innerWidth < 1500) {
+            this.galeriaWidth = 500;
+        }
+        if (window.innerWidth < 1200) {
+            this.galeriaWidth = 400;
+        }
+        if (window.innerWidth < 435) {
+            this.galeriaWidth = '100%';
+            this.galeriaHeight = 250;
+        }
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["HostListener"])('window:resize', ['$event']),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], ProductItemComponent.prototype, "getScreenSize", null);
+    ProductItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+            selector: 'app-product-item',
+            template: __webpack_require__(/*! ./product-item.component.html */ "./src/app/product-item/product-item.component.html")
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+    ], ProductItemComponent);
+    return ProductItemComponent;
+}());
+
+/*
+Hemp Oil 3000mg: https://i.imgur.com/guYrpcw.jpg
+Hemp Oil 5000mg: https://i.imgur.com/6LHdo9j.jpg
+Hemp CBD Oil 6000mg: https://i.imgur.com/hGdN5ed.jpg
+Hemp Oil Pets: https://i.imgur.com/ywtNwtz.jpg
+Hemp Cream: https://i.imgur.com/Ckjjg9Q.jpg
+Testosterone Booster: https://i.imgur.com/38Yaapq.jpg
+Keto 3000mg: https://i.imgur.com/8h9OnWQ.jpg
+Keto 1250mg: https://i.imgur.com/s6mBng2.jpg
+Keto 800mg: https://i.imgur.com/RZnw0A0.jpg
+
+All Hemp Products: https://i.imgur.com/16O3XLa.jpg
+*/
 
 
 /***/ }),
@@ -886,7 +1078,17 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    firebase: {
+        apiKey: "AIzaSyBn9eJ2WMQb_UKyBySiQ-2SJnIakhfLWok",
+        authDomain: "online-store-9cab1.firebaseapp.com",
+        databaseURL: "https://online-store-9cab1.firebaseio.com",
+        projectId: "online-store-9cab1",
+        storageBucket: "online-store-9cab1.appspot.com",
+        messagingSenderId: "384497441582",
+        appId: "1:384497441582:web:a6cc2f5f9c1dabc4a6f8bf",
+        measurementId: "G-EJMRTNG7Y8"
+    }
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -936,7 +1138,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/DavidPazmino/Documents/Proyectos/moxi-project/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/davidpazmino/Documents/Projects/moxi-project/src/main.ts */"./src/main.ts");
 
 
 /***/ })
