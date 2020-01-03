@@ -821,7 +821,7 @@ var OnlineStoreComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Online Store</span>\n    <span class=\"menu_spacer\"></span>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n      <i class=\"material-icons\">menu</i>\n    </button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Log out</button>\n    </mat-menu>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"product_body\">\n  <div class=\"product_col1\">\n    <p-galleria [images]=\"images\" [panelWidth]=\"galeriaSize\" [panelHeight]=\"galeriaHeight\" [showCaption]=\"false\"></p-galleria>\n    <div class=\"product_uses_desktop\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.\n      </p>\n    </div>\n  </div>\n  <div class=\"product_col2\">\n    <h1>\n      Descripción\n    </h1>\n    <p>\n      Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.\n    </p>\n    <mat-form-field>\n      <mat-label>Cantidad</mat-label>\n      <mat-select #fontSize value=\"16px\" color=\"dark\" (selectionChange)=\"null\">\n        <mat-option value=\"1\">1</mat-option>\n        <mat-option value=\"2\">2</mat-option>\n        <mat-option value=\"3\">3</mat-option>\n        <mat-option value=\"4\">4</mat-option>\n        <mat-option value=\"5\">5</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <h2>\n      $99.99\n    </h2>\n    <button class=\"buy_button\" mat-raised-button> Pedir Ahora</button>    <br/> \n    <button class=\"onlyText_button\" mat-button> Política de envío</button>\n    <div class=\"product_uses_mobile\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.\n      </p>\n    </div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a href=\"\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Politica de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>"
+module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Online Store</span>\n    <span class=\"menu_spacer\"></span>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n      <i class=\"material-icons\">menu</i>\n    </button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Log out</button>\n    </mat-menu>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"product_body\">\n  <div class=\"product_col1\">\n    <p-galleria [images]=\"images\" panelWidth=\"100%\" panelHeight=\"313\" [showCaption]=\"false\"></p-galleria>\n    <div class=\"product_uses_desktop\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        {{productData.howToUse}}\n      </p>\n    </div>\n  </div>\n  <div class=\"product_col2\">\n    <h1>\n      {{productData.nombre}}\n    </h1>\n    <p>\n      {{productData.description}}\n    </p>\n    <mat-form-field>\n      <mat-label>Cantidad</mat-label>\n      <mat-select #fontSize value=\"16px\" color=\"dark\" (selectionChange)=\"null\">\n        <mat-option value=\"1\">1</mat-option>\n        <mat-option value=\"2\">2</mat-option>\n        <mat-option value=\"3\">3</mat-option>\n        <mat-option value=\"4\">4</mat-option>\n        <mat-option value=\"5\">5</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <h2>\n      ${{productData.precio}}\n    </h2>\n    <button class=\"buy_button\" mat-raised-button> Pedir Ahora</button> <br />\n    <button class=\"onlyText_button\" mat-button> Política de envío</button>\n    <div class=\"product_uses_mobile\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        {{productData.howToUse}}\n      </p>\n    </div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a href=\"\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Politica de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -838,75 +838,91 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/Models/GeneralModels */ "./src/app/common/Models/GeneralModels.ts");
+
 
 
 
 
 var ProductItemComponent = /** @class */ (function () {
-    function ProductItemComponent(route) {
+    function ProductItemComponent(route, db) {
+        var _this = this;
         this.route = route;
-        // Variables that controls the size for the galeria
-        this.galeriaWidth = 500;
-        this.galeriaHeight = 313;
-    }
-    ProductItemComponent.prototype.ngOnInit = function () {
+        this.db = db;
+        // Product data variables
+        this.productData = new _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__["ProductItemModel"]();
+        // This gets the firestore id param from the URL
         this.route.params.subscribe(function (params) {
-            console.log(params['id']); // (+) converts string 'id' to a number
+            // Firestore query
+            var docRef = db.collection("productos").doc(params['id']).valueChanges();
+            // This gets the data from the variable
+            docRef.subscribe(function (data) {
+                // This parts gets the images from firestore and fills the galleria
+                _this.images = [];
+                data.images.forEach(function (element, index) {
+                    _this.images.push({ source: element, alt: 'Description for Image' + index, title: 'Title ' + index });
+                });
+                // This part gets all the info for the product
+                _this.productData.precio = data.precio;
+                _this.productData.nombre = data.nombre;
+                _this.productData.description = data.description;
+                _this.productData.howToUse = data.howToUse;
+                console.log(_this.productData);
+            });
         });
-        this.images = [];
-        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
-        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
-        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
-        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
-        this.images.push({ source: 'assets/images/banner_photo.jpg', alt: 'Description for Image 1', title: 'Title 1' });
-        this.getScreenSize();
-    };
-    // This gets the event of the window resize
-    ProductItemComponent.prototype.getScreenSize = function () {
-        console.log(window.innerWidth);
-        if (window.innerWidth > 1900) {
-            this.galeriaWidth = 800;
-        }
-        if (window.innerWidth > 1700 && window.innerWidth < 1900) {
-            this.galeriaWidth = 700;
-        }
-        if (window.innerWidth < 1700) {
-            this.galeriaWidth = 600;
-        }
-        if (window.innerWidth < 1500) {
-            this.galeriaWidth = 500;
-        }
-        if (window.innerWidth < 1200) {
-            this.galeriaWidth = 400;
-        }
-        if (window.innerWidth < 435) {
-            this.galeriaWidth = '100%';
-            this.galeriaHeight = 250;
-        }
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["HostListener"])('window:resize', ['$event']),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], ProductItemComponent.prototype, "getScreenSize", null);
+    }
+    ProductItemComponent.prototype.ngOnInit = function () { };
     ProductItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-product-item',
             template: __webpack_require__(/*! ./product-item.component.html */ "./src/app/product-item/product-item.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"]])
     ], ProductItemComponent);
     return ProductItemComponent;
 }());
 
 /*
 Hemp Oil 3000mg: https://i.imgur.com/guYrpcw.jpg
-Hemp Oil 5000mg: https://i.imgur.com/6LHdo9j.jpg
-Hemp CBD Oil 6000mg: https://i.imgur.com/hGdN5ed.jpg
+
+Hemp Oil 5000mg:
+https://i.imgur.com/6LHdo9j.jpg
+https://i.imgur.com/Cxlvluk.jpg
+https://i.imgur.com/jE3XlEe.jpg
+https://i.imgur.com/u4Uljmr.jpg
+https://i.imgur.com/dVN53BP.jpg
+https://i.imgur.com/cn0VYwV.jpg
+https://i.imgur.com/Pe8AgvW.jpg
+https://i.imgur.com/nPflCFp.jpg
+https://i.imgur.com/ifYQYwJ.jpg
+
+Hemp CBD Oil 6000mg:
+https://i.imgur.com/hGdN5ed.jpg
+https://i.imgur.com/02os1t6.jpg
+https://i.imgur.com/9ceh4To.jpg
+https://i.imgur.com/eCQvgul.jpg
+https://i.imgur.com/Ounn3cE.jpg
+https://i.imgur.com/ilEMV0J.jpg
+
 Hemp Oil Pets: https://i.imgur.com/ywtNwtz.jpg
-Hemp Cream: https://i.imgur.com/Ckjjg9Q.jpg
-Testosterone Booster: https://i.imgur.com/38Yaapq.jpg
+
+Hemp Cream:
+https://i.imgur.com/Ckjjg9Q.jpg
+https://i.imgur.com/qcqphBu.jpg
+https://i.imgur.com/E7xoN9d.jpg
+https://i.imgur.com/MsY0n79.jpg
+https://i.imgur.com/dAH0PKb.jpg
+https://i.imgur.com/2pIVZ78.jpg
+https://i.imgur.com/iIFIfu8.jpg
+
+Testosterone Booster:
+https://i.imgur.com/38Yaapq.jpg
+https://i.imgur.com/8n1uxgs.jpg
+https://i.imgur.com/ePthLPR.jpg
+https://i.imgur.com/gbdO1u2.jpg
+https://i.imgur.com/68GBGrX.jpg
+
 Keto 3000mg: https://i.imgur.com/8h9OnWQ.jpg
 Keto 1250mg: https://i.imgur.com/s6mBng2.jpg
 Keto 800mg: https://i.imgur.com/RZnw0A0.jpg
