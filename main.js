@@ -49,7 +49,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     {
-        path: '', redirectTo: 'online-store',
+        path: '', redirectTo: 'inicio',
         pathMatch: 'full'
     },
     {
@@ -59,7 +59,7 @@ var routes = [
         path: 'repair-orders', component: _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_6__["RepairOrdersComponent"]
     },
     {
-        path: 'online-store', component: _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_2__["OnlineStoreComponent"]
+        path: 'inicio', component: _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_2__["OnlineStoreComponent"]
     },
     {
         path: 'product-item/:id', component: _product_item_product_item_component__WEBPACK_IMPORTED_MODULE_1__["ProductItemComponent"]
@@ -310,7 +310,7 @@ var ProductItemModel = /** @class */ (function () {
 /*!***********************************************!*\
   !*** ./src/app/common/constants/constants.ts ***!
   \***********************************************/
-/*! exports provided: COMMON_CONSTANTS, LOGIN_CONSTANTS, REPAIR_ORDERS_CONSTANTS */
+/*! exports provided: COMMON_CONSTANTS, LOGIN_CONSTANTS, REPAIR_ORDERS_CONSTANTS, TEXT_CONSTANTS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -318,6 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COMMON_CONSTANTS", function() { return COMMON_CONSTANTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN_CONSTANTS", function() { return LOGIN_CONSTANTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REPAIR_ORDERS_CONSTANTS", function() { return REPAIR_ORDERS_CONSTANTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_CONSTANTS", function() { return TEXT_CONSTANTS; });
 var COMMON_CONSTANTS = /** @class */ (function () {
     function COMMON_CONSTANTS() {
     }
@@ -374,6 +375,20 @@ var REPAIR_ORDERS_CONSTANTS = /** @class */ (function () {
     return REPAIR_ORDERS_CONSTANTS;
 }());
 
+var TEXT_CONSTANTS = /** @class */ (function () {
+    function TEXT_CONSTANTS() {
+    }
+    TEXT_CONSTANTS.GENERAL_INFO_TITLE = "Información general del Cannabidiol";
+    TEXT_CONSTANTS.GENERAL_INFO_MESSAGE = "<img style='width: 100%; padding: 0 10% 0;' src='https://i.imgur.com/16O3XLa.jpg' > </br></br> Seguro has escuchado hablar del CBD o cannabidiol. <br/><br/>Es uno de los compuestos medicinales más poderosos de la planta del cannabis, que cada día cobra más fama como agente terapéutico ante diferentes enfermedades y padecimientos. Y seguramente también te preguntas para qué sirve. ¿Por qué tanto alboroto por este cannabinoide? Te hablamos un poquito de sus propiedades terapéuticas y algunos productos que ya existen en el mundo, que lo contienen<br/><br/><strong>¿Qué es el CBD?</strong><br/>El cannabidiol es uno de los cannabinoides más importantes presentes en la planta de cannabis. Estos compuestos son los productos químicos que activan los receptores cannabinoides en el cerebro y en el cuerpo de todos los mamíferos.<br/>El cannabidol posee muchos efectos medicinales, con la ventaja de que no es psicoactivo, es decir, no te pone como sí lo hace el THC, otro de los más de cien cannabinoides de la planta. Incluso, el CDB ayuda a nivelar los efectos del THC en cepas con una presencia alta de este último, reduciendo los ataques de ansiedad, las palpitaciones y otros efectos adversos que puede llegar a causar.</br>En noviembre pasado, la Organización Mundial de la Salud (OMS) reconoció que el cannabidiol no es adictivo ni psicoactivo: «La OMS, órgano de las Naciones Unidas, determinó que el cannabidiol (CBD), molécula no psicoactiva de la planta Cannabis sativa, no es una sustancia peligrosa, por el contrario, cuenta con un alto potencial terapéutico.<br/><br/><strong>¿En qué ayuda el CBD?</strong><br/>Los estudios clínicos y científicos demuestran que tiene potencial terapéutico para muchas patologías, que incluyen:<br/><ul><li>Dolor crónico</li><li>Cáncer</li><li>Ansiedad</li><li>Diabetes</li><li>Epilepsia</li><li>Artritis y reumas</li><li>Trastorno de Estrés Post Traumático</li><li>Insomnio</li><li>Alcoholismo</li><li>Enfermedades cardio-vasculares</li><li>Infecciones resistentes a los antibióticos</li><li>Problemas neurológico</li><li>Insomnio</li></ul></br></br>Además, tiene propiedades antioxidantes y es rico en ácidos grasos omega 3 y 6. </br> Un producto elaborado con la planta completa de cannabis y no con CBD sintético sino natural, siempre será la mejor opción natural debido al efecto sinérgico de todos los componentes del cannabis, incluyendo los terpenos y los flavonoides, que actúan en efecto séquito.</br> Hay padecimientos, como el cáncer, para los cuales el THC es mucho más efectivo. Sin embargo, el CBD por sí mismo puede ser una gran ayuda en varios casos, y ya podemos encontrarlo en una gran diversidad de productos que lo contienen, solo o acompañado de THC y otros cannabinoides.";
+    TEXT_CONSTANTS.CONTACT_TITLE = "Información de Contacto";
+    TEXT_CONSTANTS.CONTACT_MESSAGE = "<ul><li><strong>Movistar: </strong> 0995320625 Smiley face</li><li><strong>Claro: </strong> 0992826825</li><li><strong>Correo: </strong> andrescardosoc@hotmail.com</li></ul>";
+    TEXT_CONSTANTS.POLICY_TITLE = "Política de Envíos";
+    TEXT_CONSTANTS.POLICY_MESSAGE = "Trabajamos por medio de LAARCOURIER y Servientrega con envíos a todas las provincias del Ecuador, incluido Galápagos, con deposito previo y 100% seguro.";
+    TEXT_CONSTANTS.ABOUT_TITLE = "Sobre Nosotros";
+    TEXT_CONSTANTS.ABOUT_MESSAGE = "Somos una tienda online dedicada a la venta de productos importados, de la mejor calidad,  para su salud y bienestar";
+    return TEXT_CONSTANTS;
+}());
+
 
 
 /***/ }),
@@ -385,7 +400,7 @@ var REPAIR_ORDERS_CONSTANTS = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title>{{data.title}}</h1>\n<div mat-dialog-content>\n  <p>{{data.message}}</p>\n</div>\n<div mat-dialog-actions>\n  <button mat-button (click)=\"onNoClick()\">OK</button>\n</div>"
+module.exports = "<h1 mat-dialog-title [innerHtml]=\"data.title\"></h1>\n<div class=\"dialog\" mat-dialog-content>\n  <p [innerHtml]=\"data.message\"></p>\n</div>\n<div mat-dialog-actions align=\"end\">\n  <button mat-button (click)=\"onNoClick()\">Cerrar</button>\n</div>"
 
 /***/ }),
 
@@ -715,7 +730,7 @@ var LoginPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <span>Online Store</span>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [matMenuTriggerFor]=\"menu\">\n            <i class=\"material-icons\">menu</i>\n          </button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item>Log out</button>\n          </mat-menu>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\" (click)=\"router.navigateByUrl('product-item/' + product.productId);\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>{{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a href=\"\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Politica de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <div class=\"banner_content\" [routerLink]=\"['/inicio']\" >\n            <img class=\"banner_logo\" src=\"/assets/images/logo.PNG\" alt=\"\">\n            <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n          </div>\n          <div id=\"banner_add\" class=\"banner_add\">\n            <img class=\"banner_add_image\" src=\"/assets/images/oil1.png\" alt=\"\">\n            <button class=\"info_button\" mat-raised-button (click)=\"openDialog(1)\">Más Información</button> <br />\n          </div>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [matMenuTriggerFor]=\"menu\">\n            <i class=\"material-icons\">menu</i>\n          </button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item [routerLink]=\"['/inicio']\">Inicio</button>\n          </mat-menu>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\" (click)=\"router.navigateByUrl('product-item/' + product.productId);\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>${{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -731,9 +746,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnlineStoreComponent", function() { return OnlineStoreComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-/* harmony import */ var _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/Models/GeneralModels */ "./src/app/common/Models/GeneralModels.ts");
+/* harmony import */ var _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../common/constants/constants */ "./src/app/common/constants/constants.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/Models/GeneralModels */ "./src/app/common/Models/GeneralModels.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/dialog/common-dialog/common-dialog.component */ "./src/app/common/dialog/common-dialog/common-dialog.component.ts");
+
+
+
 
 
 
@@ -741,9 +762,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var OnlineStoreComponent = /** @class */ (function () {
-    function OnlineStoreComponent(db, router) {
+    function OnlineStoreComponent(db, router, dialog) {
         this.db = db;
         this.router = router;
+        this.dialog = dialog;
         // Responsive Variables
         this.gridColums = 4;
         // Firabase variables
@@ -756,7 +778,7 @@ var OnlineStoreComponent = /** @class */ (function () {
         this.items.subscribe(function (data) {
             _this.productsCatalogData = [];
             data.forEach(function (element) {
-                var mapData = new _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__["OnlineStoreProductModel"]();
+                var mapData = new _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_5__["OnlineStoreProductModel"]();
                 mapData.productId = element.id;
                 mapData.productDescription = element.decription;
                 mapData.productImage = element.images[0];
@@ -782,7 +804,7 @@ var OnlineStoreComponent = /** @class */ (function () {
     // This gets the event of the window resize
     OnlineStoreComponent.prototype.getScreenSize = function () {
         if (window.innerWidth > 600) {
-            this.gridColums = 4;
+            this.gridColums = 3;
         }
         if (window.innerWidth < 600) {
             this.gridColums = 3;
@@ -791,18 +813,60 @@ var OnlineStoreComponent = /** @class */ (function () {
             this.gridColums = 2;
         }
     };
+    // This gets the event of the window scroll
+    OnlineStoreComponent.prototype.onScroll = function () {
+        document.getElementById('banner_add').style.opacity = (100 - window.scrollY) + '%';
+    };
+    OnlineStoreComponent.prototype.openDialog = function (action) {
+        var title;
+        var message;
+        switch (action) {
+            case 1:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].GENERAL_INFO_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].GENERAL_INFO_MESSAGE;
+                break;
+            case 2:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].CONTACT_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].CONTACT_MESSAGE;
+                break;
+            case 3:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].POLICY_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].POLICY_MESSAGE;
+                break;
+            case 4:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].ABOUT_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].ABOUT_MESSAGE;
+                break;
+        }
+        var dialogRef = this.dialog.open(_common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_7__["CommonDialogComponent"], {
+            width: '550px',
+            data: {
+                title: title,
+                message: message
+            }
+        });
+        dialogRef.afterClosed();
+    };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["HostListener"])('window:resize', ['$event']),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"])('window:resize', ['$event']),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
     ], OnlineStoreComponent.prototype, "getScreenSize", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"])('window:scroll', ['$event']),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], OnlineStoreComponent.prototype, "onScroll", null);
     OnlineStoreComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'app-online-store',
             template: __webpack_require__(/*! ./online-store.component.html */ "./src/app/online-store/online-store.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]])
     ], OnlineStoreComponent);
     return OnlineStoreComponent;
 }());
@@ -821,7 +885,7 @@ var OnlineStoreComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Online Store</span>\n    <span class=\"menu_spacer\"></span>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n      <i class=\"material-icons\">menu</i>\n    </button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Log out</button>\n    </mat-menu>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"product_body\">\n  <div class=\"product_col1\">\n    <p-galleria [images]=\"images\" panelWidth=\"100%\" panelHeight=\"313\" [showCaption]=\"false\"></p-galleria>\n    <div class=\"product_uses_desktop\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        {{productData.howToUse}}\n      </p>\n    </div>\n  </div>\n  <div class=\"product_col2\">\n    <h1>\n      {{productData.nombre}}\n    </h1>\n    <p>\n      {{productData.description}}\n    </p>\n    <mat-form-field>\n      <mat-label>Cantidad</mat-label>\n      <mat-select #fontSize value=\"16px\" color=\"dark\" (selectionChange)=\"null\">\n        <mat-option value=\"1\">1</mat-option>\n        <mat-option value=\"2\">2</mat-option>\n        <mat-option value=\"3\">3</mat-option>\n        <mat-option value=\"4\">4</mat-option>\n        <mat-option value=\"5\">5</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <h2>\n      ${{productData.precio}}\n    </h2>\n    <button class=\"buy_button\" mat-raised-button> Pedir Ahora</button> <br />\n    <button class=\"onlyText_button\" mat-button> Política de envío</button>\n    <div class=\"product_uses_mobile\">\n      <h1>\n        Usos\n      </h1>\n      <p>\n        {{productData.howToUse}}\n      </p>\n    </div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a href=\"\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Politica de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a href=\"\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>"
+module.exports = "<div class=\"product_item_banner\">\n  <div class=\"product_item_banner_layer\">\n    <mat-toolbar class=\"toolbar_item\">\n      <mat-toolbar-row>\n        <div class=\"banner_content\" [routerLink]=\"['/inicio']\">\n          <img class=\"banner_logo\" src=\"/assets/images/logo.PNG\" alt=\"\">\n          <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n        </div>\n        <span class=\"menu_spacer\"></span>\n        <button mat-button [matMenuTriggerFor]=\"menu\">\n          <i class=\"material-icons\">menu</i>\n        </button>\n        <mat-menu #menu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/inicio']\">Inicio</button>\n        </mat-menu>\n      </mat-toolbar-row>\n    </mat-toolbar>\n  </div>\n</div>\n\n\n\n<div class=\"product_body\">\n  <div class=\"product_col1\">\n    <p-galleria [images]=\"images\" panelWidth=\"100%\" panelHeight=\"313\" autoPlay=\"false\" [showCaption]=\"false\"></p-galleria>\n    <div class=\"product_uses_desktop\">\n      <h1>\n        Sobre su uso\n      </h1>\n      <p [innerHtml]=\"productData.howToUse\"></p>\n    </div>\n  </div>\n  <div class=\"product_col2\">\n    <h1>\n      {{productData.nombre}}\n    </h1>\n    <p [innerHtml]=\"productData.description\"></p>\n    <mat-form-field>\n      <mat-label>Cantidad</mat-label>\n      <mat-select #fontSize value=\"16px\" color=\"dark\" [(ngModel)]=\"selectedQuantity\" (selectionChange)=\"onQuantityChange()\">\n        <mat-option value=\"1\">1</mat-option>\n        <mat-option value=\"2\">2</mat-option>\n        <mat-option value=\"3\">3</mat-option>\n        <mat-option value=\"4\">4</mat-option>\n        <mat-option value=\"5\">5</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <h2>\n      ${{publicPrice}}\n    </h2>\n    <button class=\"buy_button\" mat-raised-button> Pedir Ahora</button> <br />\n    <button class=\"onlyText_button\" mat-button> Política de envío</button>\n    <div class=\"product_uses_mobile\">\n      <h1>\n        Sobre su uso\n      </h1>\n      <p [innerHtml]=\"productData.howToUse\"></p>\n    </div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -840,16 +904,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
 /* harmony import */ var _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/Models/GeneralModels */ "./src/app/common/Models/GeneralModels.ts");
+/* harmony import */ var _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/constants/constants */ "./src/app/common/constants/constants.ts");
+/* harmony import */ var _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../common/dialog/common-dialog/common-dialog.component */ "./src/app/common/dialog/common-dialog/common-dialog.component.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+
+
+
 
 
 
 
 
 var ProductItemComponent = /** @class */ (function () {
-    function ProductItemComponent(route, db) {
+    function ProductItemComponent(route, db, dialog) {
         var _this = this;
         this.route = route;
         this.db = db;
+        this.dialog = dialog;
         // Product data variables
         this.productData = new _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__["ProductItemModel"]();
         // This gets the firestore id param from the URL
@@ -865,6 +936,7 @@ var ProductItemComponent = /** @class */ (function () {
                 });
                 // This part gets all the info for the product
                 _this.productData.precio = data.precio;
+                _this.publicPrice = Number(_this.productData.precio);
                 _this.productData.nombre = data.nombre;
                 _this.productData.description = data.description;
                 _this.productData.howToUse = data.howToUse;
@@ -872,13 +944,42 @@ var ProductItemComponent = /** @class */ (function () {
             });
         });
     }
+    ProductItemComponent.prototype.openDialog = function (action) {
+        var title;
+        var message;
+        switch (action) {
+            case 2:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_CONSTANTS"].CONTACT_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_CONSTANTS"].CONTACT_MESSAGE;
+                break;
+            case 3:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_CONSTANTS"].POLICY_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_CONSTANTS"].POLICY_MESSAGE;
+                break;
+            case 4:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_CONSTANTS"].ABOUT_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_CONSTANTS"].ABOUT_MESSAGE;
+                break;
+        }
+        var dialogRef = this.dialog.open(_common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_6__["CommonDialogComponent"], {
+            width: '550px',
+            data: {
+                title: title,
+                message: message
+            }
+        });
+        dialogRef.afterClosed();
+    };
+    ProductItemComponent.prototype.onQuantityChange = function () {
+        this.publicPrice = Number(this.productData.precio) * Number(this.selectedQuantity);
+    };
     ProductItemComponent.prototype.ngOnInit = function () { };
     ProductItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-product-item',
             template: __webpack_require__(/*! ./product-item.component.html */ "./src/app/product-item/product-item.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialog"]])
     ], ProductItemComponent);
     return ProductItemComponent;
 }());
