@@ -40,6 +40,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./repair-orders/repair-orders.component */ "./src/app/repair-orders/repair-orders.component.ts");
+/* harmony import */ var _my_cart_my_cart_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./my-cart/my-cart.component */ "./src/app/my-cart/my-cart.component.ts");
+
 
 
 
@@ -63,6 +65,9 @@ var routes = [
     },
     {
         path: 'product-item/:id', component: _product_item_product_item_component__WEBPACK_IMPORTED_MODULE_1__["ProductItemComponent"]
+    },
+    {
+        path: 'carrito', component: _my_cart_my_cart_component__WEBPACK_IMPORTED_MODULE_7__["MyCartComponent"]
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -160,6 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _my_cart_my_cart_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./my-cart/my-cart.component */ "./src/app/my-cart/my-cart.component.ts");
 
 
 
@@ -190,6 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -202,6 +209,7 @@ var AppModule = /** @class */ (function () {
                 _repair_orders_repair_orders_component__WEBPACK_IMPORTED_MODULE_20__["RepairOrdersComponent"],
                 _online_store_online_store_component__WEBPACK_IMPORTED_MODULE_21__["OnlineStoreComponent"],
                 _product_item_product_item_component__WEBPACK_IMPORTED_MODULE_22__["ProductItemComponent"],
+                _my_cart_my_cart_component__WEBPACK_IMPORTED_MODULE_26__["MyCartComponent"],
             ],
             exports: [
                 _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatFormFieldModule"]
@@ -283,13 +291,15 @@ var DialogDataModel = /** @class */ (function () {
 /*!************************************************!*\
   !*** ./src/app/common/Models/GeneralModels.ts ***!
   \************************************************/
-/*! exports provided: OnlineStoreProductModel, ProductItemModel */
+/*! exports provided: OnlineStoreProductModel, ProductItemModel, GeneralCartModel, ItemCartModel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnlineStoreProductModel", function() { return OnlineStoreProductModel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductItemModel", function() { return ProductItemModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeneralCartModel", function() { return GeneralCartModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemCartModel", function() { return ItemCartModel; });
 var OnlineStoreProductModel = /** @class */ (function () {
     function OnlineStoreProductModel() {
     }
@@ -302,6 +312,18 @@ var ProductItemModel = /** @class */ (function () {
     return ProductItemModel;
 }());
 
+var GeneralCartModel = /** @class */ (function () {
+    function GeneralCartModel() {
+    }
+    return GeneralCartModel;
+}());
+
+var ItemCartModel = /** @class */ (function () {
+    function ItemCartModel() {
+    }
+    return ItemCartModel;
+}());
+
 
 
 /***/ }),
@@ -310,7 +332,7 @@ var ProductItemModel = /** @class */ (function () {
 /*!***********************************************!*\
   !*** ./src/app/common/constants/constants.ts ***!
   \***********************************************/
-/*! exports provided: COMMON_CONSTANTS, LOGIN_CONSTANTS, REPAIR_ORDERS_CONSTANTS, TEXT_CONSTANTS */
+/*! exports provided: COMMON_CONSTANTS, LOGIN_CONSTANTS, REPAIR_ORDERS_CONSTANTS, TEXT_CONSTANTS, CART_CONSTANTS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -319,6 +341,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN_CONSTANTS", function() { return LOGIN_CONSTANTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REPAIR_ORDERS_CONSTANTS", function() { return REPAIR_ORDERS_CONSTANTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_CONSTANTS", function() { return TEXT_CONSTANTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CART_CONSTANTS", function() { return CART_CONSTANTS; });
 var COMMON_CONSTANTS = /** @class */ (function () {
     function COMMON_CONSTANTS() {
     }
@@ -389,6 +412,13 @@ var TEXT_CONSTANTS = /** @class */ (function () {
     return TEXT_CONSTANTS;
 }());
 
+var CART_CONSTANTS = /** @class */ (function () {
+    function CART_CONSTANTS() {
+    }
+    CART_CONSTANTS.GENERAL_INFO_TITLE = "Información general del Cannabidiol";
+    return CART_CONSTANTS;
+}());
+
 
 
 /***/ }),
@@ -446,6 +476,96 @@ var CommonDialogComponent = /** @class */ (function () {
             _Models_DialogDataModel__WEBPACK_IMPORTED_MODULE_3__["DialogDataModel"]])
     ], CommonDialogComponent);
     return CommonDialogComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/services/cart.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/common/services/cart.service.ts ***!
+  \*************************************************/
+/*! exports provided: CartService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartService", function() { return CartService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _Models_GeneralModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Models/GeneralModels */ "./src/app/common/Models/GeneralModels.ts");
+
+
+
+var CartService = /** @class */ (function () {
+    function CartService() {
+    }
+    /**
+     * This adds an object to the cart
+     *
+     * @param {*} object
+     * @memberof CartService
+     */
+    CartService.prototype.addToCart = function (object) {
+        var generalCart = new _Models_GeneralModels__WEBPACK_IMPORTED_MODULE_2__["GeneralCartModel"]();
+        generalCart.products = [];
+        if (localStorage.getItem('myCart')) {
+            var otherProducts = void 0;
+            otherProducts = JSON.parse(localStorage.getItem('myCart'));
+            generalCart.products = otherProducts.products;
+        }
+        generalCart.products.push(object);
+        localStorage.removeItem('myCart');
+        localStorage.setItem('myCart', JSON.stringify(generalCart));
+        var item = JSON.parse(localStorage.getItem('myCart'));
+        console.log(item);
+    };
+    /**
+     * This updates an item of the cart
+     *
+     * @param {*} object
+     * @param {number} index
+     * @memberof CartService
+     */
+    CartService.prototype.updateCart = function (object, index) {
+        var item = JSON.parse(localStorage.getItem('myCart'));
+        item.products[index].productQuantity = object.productQuantity;
+        item.products[index].productPrice = object.productPrice;
+        localStorage.removeItem('myCart');
+        localStorage.setItem('myCart', JSON.stringify(item));
+        var aux = JSON.parse(localStorage.getItem('myCart'));
+        console.log(aux);
+    };
+    /**
+     * This reads the item on the cart and decides what to do
+     *
+     * @param {*} object
+     * @memberof CartService
+     */
+    CartService.prototype.readCartObject = function (object) {
+        var _this = this;
+        var duplicatedId = false;
+        var item = JSON.parse(localStorage.getItem('myCart'));
+        if (item) {
+            item.products.forEach(function (element, index) {
+                if (element.productId === object.productId) {
+                    _this.updateCart(object, index);
+                    duplicatedId = true;
+                }
+            });
+        }
+        if (!duplicatedId) {
+            this.addToCart(object);
+        }
+    };
+    CartService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], CartService);
+    return CartService;
 }());
 
 
@@ -723,6 +843,190 @@ var LoginPageComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/my-cart/my-cart.component.html":
+/*!************************************************!*\
+  !*** ./src/app/my-cart/my-cart.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"product_item_banner\">\n  <div class=\"product_item_banner_layer\">\n    <mat-toolbar class=\"toolbar_item\">\n      <mat-toolbar-row>\n        <div class=\"banner_content\" [routerLink]=\"['/inicio']\">\n          <img class=\"banner_logo\" src=\"https://i.imgur.com/sGB2JwW.png\" alt=\"\">\n          <span class=\"banner_text\">\n            <p>Cannabidiol Ecuador</p>\n          </span>\n        </div>\n        <span class=\"menu_spacer\"></span>\n        <button mat-button [routerLink]=\"['/carrito']\">\n          <i class=\"material-icons\">shopping_cart</i>\n        </button>\n      </mat-toolbar-row>\n    </mat-toolbar>\n  </div>\n</div>\n\n<div class=\"product_body\" *ngIf=\"!emptyCart\">\n  <div class=\"product_col1\">\n    <h1>Carrito de compras:</h1>\n  </div>\n  <div class=\"product_col2\">\n    <mat-card>\n      No tienes productos en tu carrito de compras:\n    </mat-card>\n  </div>\n</div>\n<div class=\"product_body\" *ngIf=\"emptyCart\">\n  <div class=\"product_col1\">\n    <h1>Carrito de compras:</h1>\n    <table class=\"table_cart\">\n      <tr>\n        <th></th>\n        <th>Producto</th>\n        <th>Cantidad</th>\n        <th>Precio</th>\n      </tr>\n      <tr *ngFor=\"let item of cartItems.products\">\n        <td class=\"image_col\">\n          <img [src]=\"item.productImage\" alt=\"\">\n        </td>\n        <td>{{item.productName}}</td>\n        <td>{{item.productQuantity}}</td>\n        <td>{{item.productPrice}}</td>\n      </tr>\n\n    </table>\n\n\n    <button style=\"margin-bottom: 5%;\" class=\"buy_button\" mat-raised-button [routerLink]=\"['/inicio']\" (click)=\"removeCartItems()\">\n      <i class=\"material-icons\">remove_shopping_cart</i>\n      Vaciar carrito\n    </button> <br />\n\n  </div>\n\n\n  <div class=\"product_col2\">\n    <div [hidden]=\"numberSaved\">\n      <mat-card class=\"input_phone\">\n        <h3>Escribe tu número de telefono para continuar con la compra:</h3>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Teléfono\" [(ngModel)]=\"clientPhoneNumber\" name=\"userName\">\n        </mat-form-field>\n        <div>\n          <button class=\"buy_button\" mat-raised-button (click)=\"savePhoneNumber()\"> Continuar</button> <br />\n        </div>\n      </mat-card>\n    </div>\n    <div [hidden]=\"!numberSaved\" #paypal></div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/my-cart/my-cart.component.scss":
+/*!************************************************!*\
+  !*** ./src/app/my-cart/my-cart.component.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL215LWNhcnQvbXktY2FydC5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/my-cart/my-cart.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/my-cart/my-cart.component.ts ***!
+  \**********************************************/
+/*! exports provided: MyCartComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyCartComponent", function() { return MyCartComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/constants/constants */ "./src/app/common/constants/constants.ts");
+/* harmony import */ var _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/dialog/common-dialog/common-dialog.component */ "./src/app/common/dialog/common-dialog/common-dialog.component.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+
+
+
+
+
+var MyCartComponent = /** @class */ (function () {
+    function MyCartComponent(dialog) {
+        this.dialog = dialog;
+        this.totalPrice = 0;
+        this.description = '';
+        this.clientPhoneNumber = '';
+        this.numberSaved = false;
+        this.emptyCart = true;
+        // Paypal variables
+        this.paidFor = false;
+        this.product = {
+            price: this.totalPrice,
+            description: this.description
+        };
+        this.emptyCart = (JSON.parse(localStorage.getItem('myCart')) == null) ? false : true;
+        console.log(this.cartItems, this.emptyCart);
+    }
+    MyCartComponent.prototype.getPriceDescription = function () {
+        var _this = this;
+        if (this.emptyCart) {
+            this.cartItems.products.forEach(function (element) {
+                _this.totalPrice = _this.totalPrice + element.productPrice;
+                _this.description = (_this.description === '') ?
+                    _this.description + element.productName + '(x' + element.productQuantity + ')' :
+                    _this.description + ', ' + element.productName + '(x' + element.productQuantity + ')';
+            });
+            console.log(this.totalPrice, this.description);
+        }
+    };
+    MyCartComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.cartItems = (JSON.parse(localStorage.getItem('myCart')) == null) ? [''] : (JSON.parse(localStorage.getItem('myCart')));
+        this.getPriceDescription();
+        if (this.emptyCart) {
+            setTimeout(function () {
+                _this.initPaypal();
+            }, 2000);
+        }
+    };
+    MyCartComponent.prototype.initPaypal = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, paypal
+                            .Buttons({
+                            createOrder: function (data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [
+                                        {
+                                            description: _this.product.description,
+                                            amount: {
+                                                currency_code: 'USD',
+                                                value: _this.product.price
+                                            }
+                                        }
+                                    ]
+                                });
+                            },
+                            onApprove: function (data, actions) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                                var order;
+                                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0: return [4 /*yield*/, actions.order.capture()];
+                                        case 1:
+                                            order = _a.sent();
+                                            this.paidFor = true;
+                                            console.log(order);
+                                            return [2 /*return*/];
+                                    }
+                                });
+                            }); },
+                            onError: function (err) {
+                                console.log(err);
+                            }
+                        })
+                            .render(this.paypal.nativeElement)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MyCartComponent.prototype.savePhoneNumber = function () {
+        this.numberSaved = true;
+        this.description = this.description +
+            ' - Número de contacto del cliente: ' + this.clientPhoneNumber;
+        console.log(this.description);
+    };
+    MyCartComponent.prototype.openDialog = function (action) {
+        var title;
+        var message;
+        switch (action) {
+            case 1:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].GENERAL_INFO_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].GENERAL_INFO_MESSAGE;
+                break;
+            case 2:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].CONTACT_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].CONTACT_MESSAGE;
+                break;
+            case 3:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].POLICY_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].POLICY_MESSAGE;
+                break;
+            case 4:
+                title = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].ABOUT_TITLE;
+                message = _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__["TEXT_CONSTANTS"].ABOUT_MESSAGE;
+                break;
+        }
+        var dialogRef = this.dialog.open(_common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_3__["CommonDialogComponent"], {
+            width: '550px',
+            data: {
+                title: title,
+                message: message
+            }
+        });
+        dialogRef.afterClosed();
+    };
+    MyCartComponent.prototype.removeCartItems = function () {
+        localStorage.removeItem('myCart');
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('paypal'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
+    ], MyCartComponent.prototype, "paypal", void 0);
+    MyCartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-my-cart',
+            template: __webpack_require__(/*! ./my-cart.component.html */ "./src/app/my-cart/my-cart.component.html"),
+            styles: [__webpack_require__(/*! ./my-cart.component.scss */ "./src/app/my-cart/my-cart.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]])
+    ], MyCartComponent);
+    return MyCartComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/online-store/online-store.component.html":
 /*!**********************************************************!*\
   !*** ./src/app/online-store/online-store.component.html ***!
@@ -730,7 +1034,7 @@ var LoginPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <div class=\"banner_content\" [routerLink]=\"['/inicio']\" >\n            <img class=\"banner_logo\" src=\"/assets/images/logo.PNG\" alt=\"\">\n            <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n          </div>\n          <div id=\"banner_add\" class=\"banner_add\">\n            <img class=\"banner_add_image\" src=\"/assets/images/oil1.png\" alt=\"\">\n            <button class=\"info_button\" mat-raised-button (click)=\"openDialog(1)\">Más Información</button> <br />\n          </div>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [matMenuTriggerFor]=\"menu\">\n            <i class=\"material-icons\">menu</i>\n          </button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item [routerLink]=\"['/inicio']\">Inicio</button>\n          </mat-menu>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\" (click)=\"router.navigateByUrl('product-item/' + product.productId);\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>${{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
+module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <div class=\"banner_content\" [routerLink]=\"['/inicio']\" >\n            <img class=\"banner_logo\" src=\"https://i.imgur.com/sGB2JwW.png\" alt=\"\">\n            <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n          </div>\n          <div id=\"banner_add\" class=\"banner_add\">\n            <img class=\"banner_add_image\" src=\"https://i.imgur.com/TpGagnd.png\" alt=\"\">\n            <button class=\"info_button\" mat-raised-button (click)=\"openDialog(1)\">Más Información</button> <br />\n          </div>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [routerLink]=\"['/carrito']\">\n            <i class=\"material-icons\" >shopping_cart</i>\n          </button>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\" (click)=\"router.navigateByUrl('product-item/' + product.productId);\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>${{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -885,7 +1189,7 @@ var OnlineStoreComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"product_item_banner\">\n  <div class=\"product_item_banner_layer\">\n    <mat-toolbar class=\"toolbar_item\">\n      <mat-toolbar-row>\n        <div class=\"banner_content\" [routerLink]=\"['/inicio']\">\n          <img class=\"banner_logo\" src=\"/assets/images/logo.PNG\" alt=\"\">\n          <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n        </div>\n        <span class=\"menu_spacer\"></span>\n        <button mat-button [matMenuTriggerFor]=\"menu\">\n          <i class=\"material-icons\">menu</i>\n        </button>\n        <mat-menu #menu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/inicio']\">Inicio</button>\n        </mat-menu>\n      </mat-toolbar-row>\n    </mat-toolbar>\n  </div>\n</div>\n\n<div class=\"product_body\">\n  <div class=\"product_col1\">\n    <p-galleria [images]=\"images\" panelWidth=\"100%\" panelHeight=\"313\" autoPlay=\"false\" [showCaption]=\"false\"></p-galleria>\n    <div class=\"product_uses_desktop\">\n      <h1>\n        Sobre su uso\n      </h1>\n      <p [innerHtml]=\"productData.howToUse\"></p>\n    </div>\n  </div>\n  <div class=\"product_col2\">\n    <h1>\n      {{productData.nombre}}\n    </h1>\n    <p [innerHtml]=\"productData.description\"></p>\n    <div class=\"product_values\">\n      <mat-form-field>\n        <mat-label>Cantidad</mat-label>\n        <mat-select #fontSize value=\"16px\" color=\"dark\" [(ngModel)]=\"selectedQuantity\" (selectionChange)=\"onQuantityChange()\">\n          <mat-option value=\"1\">1</mat-option>\n          <mat-option value=\"2\">2</mat-option>\n          <mat-option value=\"3\">3</mat-option>\n          <mat-option value=\"4\">4</mat-option>\n          <mat-option value=\"5\">5</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <h2>\n        ${{publicPrice}}\n      </h2>\n      <button class=\"buy_button\" mat-raised-button> Pedir Ahora</button> <br />\n      <button class=\"onlyText_button\" mat-button (click)=\"openDialog(3)\"> Política de envío</button>\n    </div>\n    <div class=\"product_uses_mobile\">\n      <h1>\n        Sobre su uso\n      </h1>\n      <p [innerHtml]=\"productData.howToUse\"></p>\n    </div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
+module.exports = "<div class=\"product_item_banner\">\n  <div class=\"product_item_banner_layer\">\n    <mat-toolbar class=\"toolbar_item\">\n      <mat-toolbar-row>\n        <div class=\"banner_content\" [routerLink]=\"['/inicio']\">\n          <img class=\"banner_logo\" src=\"https://i.imgur.com/sGB2JwW.png\" alt=\"\">\n          <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n        </div>\n        <span class=\"menu_spacer\"></span>\n        <button mat-button [routerLink]=\"['/carrito']\">\n          <i class=\"material-icons\" >shopping_cart</i>\n        </button>\n      </mat-toolbar-row>\n    </mat-toolbar>\n  </div>\n</div>\n\n<div class=\"product_body\">\n  <div class=\"product_col1\">\n    <p-galleria [images]=\"images\" panelWidth=\"100%\" panelHeight=\"313\" autoPlay=\"false\" [showCaption]=\"false\"></p-galleria>\n    <div class=\"product_uses_desktop\">\n      <h1>\n        Sobre su uso\n      </h1>\n      <p [innerHtml]=\"productData.howToUse\"></p>\n    </div>\n  </div>\n  <div class=\"product_col2\">\n    <h1>\n      {{productData.nombre}}\n    </h1>\n    <p [innerHtml]=\"productData.description\"></p>\n    <div class=\"product_values\">\n      <mat-form-field>\n        <mat-label>Cantidad</mat-label>\n        <mat-select #fontSize value=\"16px\" color=\"dark\" [(ngModel)]=\"selectedQuantity\" (selectionChange)=\"onQuantityChange()\">\n          <mat-option value=\"1\">1</mat-option>\n          <mat-option value=\"2\">2</mat-option>\n          <mat-option value=\"3\">3</mat-option>\n          <mat-option value=\"4\">4</mat-option>\n          <mat-option value=\"5\">5</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <h2>\n        ${{publicPrice}}\n      </h2>\n      <button class=\"buy_button\" mat-raised-button (click)=\"addToCart()\"> Pedir Ahora</button> <br />\n      <button class=\"onlyText_button\" mat-button (click)=\"openDialog(3)\"> Política de envío</button>\n    </div>\n    <div class=\"product_uses_mobile\">\n      <h1>\n        Sobre su uso\n      </h1>\n      <p [innerHtml]=\"productData.howToUse\"></p>\n    </div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -907,6 +1211,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_constants_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/constants/constants */ "./src/app/common/constants/constants.ts");
 /* harmony import */ var _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../common/dialog/common-dialog/common-dialog.component */ "./src/app/common/dialog/common-dialog/common-dialog.component.ts");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _common_services_cart_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../common/services/cart.service */ "./src/app/common/services/cart.service.ts");
+
 
 
 
@@ -916,17 +1222,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductItemComponent = /** @class */ (function () {
-    function ProductItemComponent(route, db, dialog) {
+    function ProductItemComponent(route, db, dialog, cartService) {
         var _this = this;
         this.route = route;
         this.db = db;
         this.dialog = dialog;
+        this.cartService = cartService;
         // Product data variables
         this.productData = new _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__["ProductItemModel"]();
         // This gets the firestore id param from the URL
         this.route.params.subscribe(function (params) {
+            _this.productId = params['id'];
             // Firestore query
-            var docRef = db.collection("productos").doc(params['id']).valueChanges();
+            var docRef = db.collection("productos").doc(_this.productId).valueChanges();
             // This gets the data from the variable
             docRef.subscribe(function (data) {
                 // This parts gets the images from firestore and fills the galleria
@@ -940,7 +1248,6 @@ var ProductItemComponent = /** @class */ (function () {
                 _this.productData.nombre = data.nombre;
                 _this.productData.description = data.description;
                 _this.productData.howToUse = data.howToUse;
-                console.log(_this.productData);
             });
         });
     }
@@ -973,13 +1280,25 @@ var ProductItemComponent = /** @class */ (function () {
     ProductItemComponent.prototype.onQuantityChange = function () {
         this.publicPrice = Number(this.productData.precio) * Number(this.selectedQuantity);
     };
+    ProductItemComponent.prototype.addToCart = function () {
+        var cartItem = new _common_Models_GeneralModels__WEBPACK_IMPORTED_MODULE_4__["ItemCartModel"]();
+        cartItem.productId = this.productId;
+        cartItem.productName = this.productData.nombre;
+        cartItem.productImage = this.images[0].source;
+        cartItem.productPrice = (this.publicPrice) ? this.publicPrice : Number(this.productData.precio);
+        cartItem.productQuantity = ((this.selectedQuantity)) ? Number(this.selectedQuantity) : 1;
+        this.cartService.readCartObject(cartItem);
+    };
     ProductItemComponent.prototype.ngOnInit = function () { };
     ProductItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-product-item',
             template: __webpack_require__(/*! ./product-item.component.html */ "./src/app/product-item/product-item.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialog"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialog"],
+            _common_services_cart_service__WEBPACK_IMPORTED_MODULE_8__["CartService"]])
     ], ProductItemComponent);
     return ProductItemComponent;
 }());
