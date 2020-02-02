@@ -850,7 +850,7 @@ var LoginPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"product_item_banner\">\n  <div class=\"product_item_banner_layer\">\n    <mat-toolbar class=\"toolbar_item\">\n      <mat-toolbar-row>\n        <div class=\"banner_content\" [routerLink]=\"['/inicio']\">\n          <img class=\"banner_logo\" src=\"https://i.imgur.com/sGB2JwW.png\" alt=\"\">\n          <span class=\"banner_text\">\n            <p>Cannabidiol Ecuador</p>\n          </span>\n        </div>\n        <span class=\"menu_spacer\"></span>\n        <button mat-button [routerLink]=\"['/carrito']\">\n          <i class=\"material-icons\">shopping_cart</i>\n        </button>\n      </mat-toolbar-row>\n    </mat-toolbar>\n  </div>\n</div>\n\n<div class=\"product_body\" *ngIf=\"!emptyCart\">\n  <div class=\"product_col1\">\n    <h1>Carrito de compras:</h1>\n  </div>\n  <div class=\"product_col2\">\n    <mat-card>\n      No tienes productos en tu carrito de compras:\n    </mat-card>\n  </div>\n</div>\n<div class=\"product_body\" *ngIf=\"emptyCart\">\n  <div class=\"product_col1\">\n    <h1>Carrito de compras:</h1>\n    <table class=\"table_cart\">\n      <tr>\n        <th></th>\n        <th>Producto</th>\n        <th>Cantidad</th>\n        <th>Precio</th>\n      </tr>\n      <tr *ngFor=\"let item of cartItems.products\">\n        <td class=\"image_col\">\n          <img [src]=\"item.productImage\" alt=\"\">\n        </td>\n        <td>{{item.productName}}</td>\n        <td>{{item.productQuantity}}</td>\n        <td>{{item.productPrice}}</td>\n      </tr>\n\n    </table>\n\n\n    <button style=\"margin-bottom: 5%;\" class=\"buy_button\" mat-raised-button [routerLink]=\"['/inicio']\" (click)=\"removeCartItems()\">\n      <i class=\"material-icons\">remove_shopping_cart</i>\n      Vaciar carrito\n    </button> <br />\n\n  </div>\n\n\n  <div class=\"product_col2\">\n    <div [hidden]=\"numberSaved\">\n      <mat-card class=\"input_phone\">\n        <h3>Escribe tu número de telefono para continuar con la compra:</h3>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Teléfono\" [(ngModel)]=\"clientPhoneNumber\" name=\"userName\">\n        </mat-form-field>\n        <div>\n          <button class=\"buy_button\" mat-raised-button (click)=\"savePhoneNumber()\"> Continuar</button> <br />\n        </div>\n      </mat-card>\n    </div>\n    <div [hidden]=\"!numberSaved\" #paypal></div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>"
+module.exports = "<div class=\"product_item_banner\">\n  <div class=\"product_item_banner_layer\">\n    <mat-toolbar class=\"toolbar_item\">\n      <mat-toolbar-row>\n        <div class=\"banner_content\" [routerLink]=\"['/inicio']\">\n          <img class=\"banner_logo\" src=\"https://i.imgur.com/sGB2JwW.png\" alt=\"\">\n          <span class=\"banner_text\">\n            <p>Cannabidiol Ecuador</p>\n          </span>\n        </div>\n        <span class=\"menu_spacer\"></span>\n        <button mat-button [routerLink]=\"['/carrito']\">\n          <i class=\"material-icons\">shopping_cart</i>\n        </button>\n      </mat-toolbar-row>\n    </mat-toolbar>\n  </div>\n</div>\n\n<div class=\"product_body\" *ngIf=\"!emptyCart\">\n  <div class=\"product_col1\">\n    <h1>Carrito de compras:</h1>\n  </div>\n  <div class=\"product_col2\">\n    <mat-card>\n      No tienes productos en tu carrito de compras:\n    </mat-card>\n  </div>\n</div>\n<div class=\"product_body\" *ngIf=\"emptyCart\">\n  <div class=\"product_col1\">\n    <h1>Carrito de compras:</h1>\n    <table class=\"table_cart\">\n      <tr>\n        <th></th>\n        <th>Producto</th>\n        <th>Cantidad</th>\n        <th>Precio</th>\n      </tr>\n      <tr *ngFor=\"let item of cartItems.products\">\n        <td class=\"image_col\">\n          <img [src]=\"item.productImage\" alt=\"\">\n        </td>\n        <td>{{item.productName}}</td>\n        <td>{{item.productQuantity}}</td>\n        <td>{{item.productPrice}}</td>\n      </tr>\n\n    </table>\n\n\n    <button style=\"margin-bottom: 5%;\" class=\"buy_button\" mat-raised-button [routerLink]=\"['/inicio']\" (click)=\"removeCartItems()\">\n      <i class=\"material-icons\">remove_shopping_cart</i>\n      Vaciar carrito\n    </button> <br />\n\n  </div>\n\n\n  <div class=\"product_col2\">\n    <div [hidden]=\"numberSaved\">\n      <mat-card class=\"input_phone\">\n        <h3>Escribe tu número de telefono para continuar con la compra:</h3>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"0991234567\" [(ngModel)]=\"clientPhoneNumber\" name=\"userName\">\n        </mat-form-field>\n        <div>\n          <button class=\"buy_button\" mat-raised-button (click)=\"savePhoneNumber()\"> Continuar</button> <br />\n        </div>\n      </mat-card>\n    </div>\n    <div [hidden]=\"!numberSaved\" #paypal></div>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -880,14 +880,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_constants_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/constants/constants */ "./src/app/common/constants/constants.ts");
 /* harmony import */ var _common_dialog_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/dialog/common-dialog/common-dialog.component */ "./src/app/common/dialog/common-dialog/common-dialog.component.ts");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
 
 
 var MyCartComponent = /** @class */ (function () {
-    function MyCartComponent(dialog) {
+    function MyCartComponent(dialog, router) {
         this.dialog = dialog;
+        this.router = router;
         this.totalPrice = 0;
         this.description = '';
         this.clientPhoneNumber = '';
@@ -946,6 +949,8 @@ var MyCartComponent = /** @class */ (function () {
                                         case 1:
                                             order = _a.sent();
                                             this.paidFor = true;
+                                            this.removeCartItems();
+                                            this.router.navigateByUrl('/inicio');
                                             console.log(order);
                                             return [2 /*return*/];
                                     }
@@ -1018,7 +1023,7 @@ var MyCartComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./my-cart.component.html */ "./src/app/my-cart/my-cart.component.html"),
             styles: [__webpack_require__(/*! ./my-cart.component.scss */ "./src/app/my-cart/my-cart.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], MyCartComponent);
     return MyCartComponent;
 }());
