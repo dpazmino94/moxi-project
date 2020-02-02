@@ -915,14 +915,8 @@ var MyCartComponent = /** @class */ (function () {
         }
     };
     MyCartComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.cartItems = (JSON.parse(localStorage.getItem('myCart')) == null) ? [''] : (JSON.parse(localStorage.getItem('myCart')));
         this.getPriceDescription();
-        if (this.emptyCart) {
-            setTimeout(function () {
-                _this.initPaypal();
-            }, 2000);
-        }
     };
     MyCartComponent.prototype.initPaypal = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -935,10 +929,10 @@ var MyCartComponent = /** @class */ (function () {
                                 return actions.order.create({
                                     purchase_units: [
                                         {
-                                            description: _this.product.description,
+                                            description: _this.description,
                                             amount: {
                                                 currency_code: 'USD',
-                                                value: _this.product.price
+                                                value: _this.totalPrice
                                             }
                                         }
                                     ]
@@ -970,6 +964,12 @@ var MyCartComponent = /** @class */ (function () {
         });
     };
     MyCartComponent.prototype.savePhoneNumber = function () {
+        var _this = this;
+        if (this.emptyCart) {
+            setTimeout(function () {
+                _this.initPaypal();
+            }, 1000);
+        }
         this.numberSaved = true;
         this.description = this.description +
             ' - Número de contacto del cliente: ' + this.clientPhoneNumber;
@@ -1034,7 +1034,7 @@ var MyCartComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <div class=\"banner_content\" [routerLink]=\"['/inicio']\" >\n            <img class=\"banner_logo\" src=\"https://i.imgur.com/sGB2JwW.png\" alt=\"\">\n            <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n          </div>\n          <div id=\"banner_add\" class=\"banner_add\">\n            <img class=\"banner_add_image\" src=\"https://i.imgur.com/TpGagnd.png\" alt=\"\">\n            <button class=\"info_button\" mat-raised-button (click)=\"openDialog(1)\">Más Información</button> <br />\n          </div>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [routerLink]=\"['/carrito']\">\n            <i class=\"material-icons\" >shopping_cart</i>\n          </button>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\" (click)=\"router.navigateByUrl('product-item/' + product.productId);\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>${{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
+module.exports = "<div class=\"online_store_container\">\n  <div class=\"online_store_banner\">\n    <div class=\"online_store_banner_layer\">\n      <mat-toolbar>\n        <mat-toolbar-row>\n          <div class=\"banner_content\" [routerLink]=\"['/inicio']\" >\n            <img class=\"banner_logo\" src=\"https://i.imgur.com/sGB2JwW.png\" alt=\"\">\n            <span class=\"banner_text\"><p>Cannabidiol Ecuador</p></span>\n          </div>\n          <div id=\"banner_add\" class=\"banner_add\" [ngStyle]=\"{'opacity': opacityController}\">\n            <img class=\"banner_add_image\" src=\"https://i.imgur.com/TpGagnd.png\" alt=\"\">\n            <button class=\"info_button\" mat-raised-button (click)=\"openDialog(1)\">Más Información</button> <br />\n          </div>\n          <span class=\"menu_spacer\"></span>\n          <button mat-button [routerLink]=\"['/carrito']\">\n            <i class=\"material-icons\" >shopping_cart</i>\n          </button>\n        </mat-toolbar-row>\n      </mat-toolbar>\n    </div>\n  </div>\n  <div class=\"products_title\">\n    <h2>Nuestros Productos</h2>\n  </div>\n  <div class=\"products_grid\">\n    <mat-grid-list [cols]=\"gridColums\" rowHeight=\"13rem\">\n      <mat-grid-tile class=\"single_product\" *ngFor=\"let product of productsCatalogData\">\n        <div class=\"product_container\" (click)=\"router.navigateByUrl('product-item/' + product.productId);\">\n          <img [src]=\"product.productImage\" alt=\"\">\n          <h3>{{product.productTitle}}</h3>\n          <h6>${{product.productPrice}}</h6>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </div>\n</div>\n<div class=\"footer\">\n  <div>\n    <a (click)=\"openDialog(2)\">\n      <h5>Contacto</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(3)\">\n      <h5>Política de envíos</h5>\n    </a>\n  </div>\n  <div>\n    <a (click)=\"openDialog(4)\">\n      <h5>Sobre nosotros</h5>\n    </a>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1119,7 +1119,7 @@ var OnlineStoreComponent = /** @class */ (function () {
     };
     // This gets the event of the window scroll
     OnlineStoreComponent.prototype.onScroll = function () {
-        document.getElementById('banner_add').style.opacity = (100 - window.scrollY) + '%';
+        this.opacityController = (100 - window.scrollY) + '%';
     };
     OnlineStoreComponent.prototype.openDialog = function (action) {
         var title;
