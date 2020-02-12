@@ -1,11 +1,13 @@
 import { Router } from '@angular/router';
 import { ProductItemModel } from './../common/Models/GeneralModels';
-import { COMMON_CONSTANTS } from './../common/constants/constants';
+import { COMMON_CONSTANTS, TEXT_CONSTANTS } from './../common/constants/constants';
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { OnlineStoreProductModel } from '../common/Models/GeneralModels';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonDialogComponent } from '../common/dialog/common-dialog/common-dialog.component';
 
 
 
@@ -18,10 +20,15 @@ export class OnlineStoreComponent implements OnInit {
   productsCatalogData: Array<OnlineStoreProductModel>;
   // Responsive Variables
   gridColums = 4;
+  // Banner add opacity controller
+  opacityController: any
   // Firabase variables
   itemValue = '';
   items: Observable<any[]>;
-  constructor(public db: AngularFirestore, public router: Router) {
+  constructor(
+    public db: AngularFirestore,
+    public router: Router,
+    public dialog: MatDialog, ) {
     this.items = db.collection('productos').valueChanges();
   }
 
@@ -48,7 +55,7 @@ export class OnlineStoreComponent implements OnInit {
     const itemRef = this.db.collection('productos');
     itemRef.add({
       description: 'Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba ',
-      howToUse: 'Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 ',     
+      howToUse: 'Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 ',
       images: ['https://i.imgur.com/38Yaapq.jpg'],
       nombre: 'Testosterone Booster',
       precio: '9.99',
@@ -59,9 +66,8 @@ export class OnlineStoreComponent implements OnInit {
   // This gets the event of the window resize
   @HostListener('window:resize', ['$event'])
   getScreenSize() {
-    console.log(window.innerWidth);
     if (window.innerWidth > 600) {
-      this.gridColums = 4;
+      this.gridColums = 3;
     }
     if (window.innerWidth < 600) {
       this.gridColums = 3;
@@ -69,6 +75,43 @@ export class OnlineStoreComponent implements OnInit {
     if (window.innerWidth < 435) {
       this.gridColums = 2;
     }
+  }
+
+  // This gets the event of the window scroll
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.opacityController = (100 - window.scrollY) + '%';
+  }
+
+  openDialog(action: number): void {
+    let title: string;
+    let message: string;
+    switch (action) {
+      case 1:
+        title = TEXT_CONSTANTS.GENERAL_INFO_TITLE;
+        message = TEXT_CONSTANTS.GENERAL_INFO_MESSAGE;
+        break;
+      case 2:
+        title = TEXT_CONSTANTS.CONTACT_TITLE;
+        message = TEXT_CONSTANTS.CONTACT_MESSAGE;
+        break;
+      case 3:
+        title = TEXT_CONSTANTS.POLICY_TITLE;
+        message = TEXT_CONSTANTS.POLICY_MESSAGE;
+        break;
+      case 4:
+        title = TEXT_CONSTANTS.ABOUT_TITLE;
+        message = TEXT_CONSTANTS.ABOUT_MESSAGE;
+        break;
+    }
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+      width: '550px',
+      data: {
+        title: title,
+        message: message
+      }
+    });
+    dialogRef.afterClosed();
   }
 
 }

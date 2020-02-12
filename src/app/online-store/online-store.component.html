@@ -3,14 +3,18 @@
     <div class="online_store_banner_layer">
       <mat-toolbar>
         <mat-toolbar-row>
-          <span>Online Store</span>
+          <div class="banner_content" [routerLink]="['/inicio']" >
+            <img class="banner_logo" src="https://i.imgur.com/sGB2JwW.png" alt="">
+            <span class="banner_text"><p>Cannabidiol Ecuador</p></span>
+          </div>
+          <div id="banner_add" class="banner_add">
+            <img class="banner_add_image" src="https://i.imgur.com/TpGagnd.png" alt="">
+            <button class="info_button" mat-raised-button (click)="openDialog(1)">Más Información</button> <br />
+          </div>
           <span class="menu_spacer"></span>
-          <button mat-button [matMenuTriggerFor]="menu">
-            <i class="material-icons">menu</i>
+          <button mat-button [routerLink]="['/carrito']">
+            <i class="material-icons" >shopping_cart</i>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Log out</button>
-          </mat-menu>
         </mat-toolbar-row>
       </mat-toolbar>
     </div>
@@ -24,27 +28,30 @@
         <div class="product_container" (click)="router.navigateByUrl('product-item/' + product.productId);">
           <img [src]="product.productImage" alt="">
           <h3>{{product.productTitle}}</h3>
-          <h6>{{product.productPrice}}</h6>
+          <h6>${{product.productPrice}}</h6>
         </div>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>
-<div class="footer">
-  <div>
-    <a href="">
-      <h5>Contacto</h5>
-    </a>
+  <div class="footer">
+    <div>
+      <a (click)="openDialog(2)">
+        <h5>Contacto</h5>
+      </a>
+    </div>
+    <div>
+      <a (click)="openDialog(3)">
+        <h5>Política de envíos</h5>
+      </a>
+    </div>
+    <div>
+      <a (click)="openDialog(4)">
+        <h5>Sobre nosotros</h5>
+      </a>
+    </div>
   </div>
-  <div>
-    <a href="">
-      <h5>Politica de envíos</h5>
-    </a>
-  </div>
-  <div>
-    <a href="">
-      <h5>Sobre nosotros</h5>
-    </a>
-  </div>
-</div>
+
+
+
 

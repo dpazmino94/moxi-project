@@ -32,6 +32,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { MyCartComponent } from './my-cart/my-cart.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { environment } from '../environments/environment';
     RepairOrdersComponent,
     OnlineStoreComponent,
     ProductItemComponent,
+    MyCartComponent,
   ],
   exports: [
     MatFormFieldModule

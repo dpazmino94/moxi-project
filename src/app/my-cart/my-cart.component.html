@@ -1,0 +1,91 @@
+<div class="product_item_banner">
+  <div class="product_item_banner_layer">
+    <mat-toolbar class="toolbar_item">
+      <mat-toolbar-row>
+        <div class="banner_content" [routerLink]="['/inicio']">
+          <img class="banner_logo" src="https://i.imgur.com/sGB2JwW.png" alt="">
+          <span class="banner_text">
+            <p>Cannabidiol Ecuador</p>
+          </span>
+        </div>
+        <span class="menu_spacer"></span>
+        <button mat-button [routerLink]="['/carrito']">
+          <i class="material-icons">shopping_cart</i>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+</div>
+
+<div class="product_body" *ngIf="!emptyCart">
+  <div class="product_col1">
+    <h1>Carrito de compras:</h1>
+  </div>
+  <div class="product_col2">
+    <mat-card>
+      No tienes productos en tu carrito de compras:
+    </mat-card>
+  </div>
+</div>
+<div class="product_body" *ngIf="emptyCart">
+  <div class="product_col1">
+    <h1>Carrito de compras:</h1>
+    <table class="table_cart">
+      <tr>
+        <th></th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+      <tr *ngFor="let item of cartItems.products">
+        <td class="image_col">
+          <img [src]="item.productImage" alt="">
+        </td>
+        <td>{{item.productName}}</td>
+        <td>{{item.productQuantity}}</td>
+        <td>{{item.productPrice}}</td>
+      </tr>
+
+    </table>
+
+
+    <button style="margin-bottom: 5%;" class="buy_button" mat-raised-button [routerLink]="['/inicio']" (click)="removeCartItems()">
+      <i class="material-icons">remove_shopping_cart</i>
+      Vaciar carrito
+    </button> <br />
+
+  </div>
+
+
+  <div class="product_col2">
+    <div [hidden]="numberSaved">
+      <mat-card class="input_phone">
+        <h3>Escribe tu número de telefono para continuar con la compra:</h3>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="0991234567" [(ngModel)]="clientPhoneNumber" name="userName">
+        </mat-form-field>
+        <div>
+          <button class="buy_button" mat-raised-button (click)="savePhoneNumber()"> Continuar</button> <br />
+        </div>
+      </mat-card>
+    </div>
+    <div [hidden]="!numberSaved" #paypal></div>
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a (click)="openDialog(2)">
+      <h5>Contacto</h5>
+    </a>
+  </div>
+  <div>
+    <a (click)="openDialog(3)">
+      <h5>Política de envíos</h5>
+    </a>
+  </div>
+  <div>
+    <a (click)="openDialog(4)">
+      <h5>Sobre nosotros</h5>
+    </a>
+  </div>
+</div>

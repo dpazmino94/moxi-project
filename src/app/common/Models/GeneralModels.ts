@@ -11,8 +11,21 @@ export class OnlineStoreProductModel {
 export class ProductItemModel {
 	description: string;
 	howToUse: string;
-	images: Array<string>;
+	images: Array<any>;
 	nombre: string;
 	precio: string;
 	order: number;
+}
+
+export class GeneralCartModel {
+	products: Array<ItemCartModel>;
+	total: number;
+}
+
+export class ItemCartModel {
+	productId: string;
+	productName: string;
+	productImage: string;
+	productQuantity: number;
+	productPrice: number;
 }

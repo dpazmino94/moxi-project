@@ -1,58 +1,81 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    <span>Online Store</span>
-    <span class="menu_spacer"></span>
-    <button mat-button [matMenuTriggerFor]="menu">
-      <i class="material-icons">menu</i>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Log out</button>
-    </mat-menu>
-  </mat-toolbar-row>
-</mat-toolbar>
+<div class="product_item_banner">
+  <div class="product_item_banner_layer">
+    <mat-toolbar class="toolbar_item">
+      <mat-toolbar-row>
+        <div class="banner_content" [routerLink]="['/inicio']">
+          <img class="banner_logo" src="https://i.imgur.com/sGB2JwW.png" alt="">
+          <span class="banner_text">
+            <p>Cannabidiol Ecuador</p>
+          </span>
+        </div>
+        <span class="menu_spacer"></span>
+        <button mat-button [routerLink]="['/carrito']">
+          <i class="material-icons">shopping_cart</i>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+</div>
 
 <div class="product_body">
   <div class="product_col1">
-    <p-galleria [images]="images" panelWidth="500" panelHeight="313" [showCaption]="false"></p-galleria>
+    <p-galleria [images]="images" panelWidth="100%" panelHeight="313" autoPlay="false" [showCaption]="false">
+    </p-galleria>
+    <div class="product_uses_desktop">
+      <h1>
+        Sobre su uso
+      </h1>
+      <p [innerHtml]="productData.howToUse"></p>
+    </div>
   </div>
   <div class="product_col2">
     <h1>
-      Awesome Title
+      {{productData.nombre}}
     </h1>
-    <p>
-      Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum, Lorem ipsum sit amet, et laudem et gloriam suam fiat voluntas tua, sicut erat in principio et nunc et semper et in secula saeculorum.
-    </p>
-    <mat-form-field>
-      <mat-label>Cantidad</mat-label>
-      <mat-select #fontSize value="16px" color="dark" (selectionChange)="null">
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4</mat-option>
-        <mat-option value="5">5</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <h2>
-      $99.99
-    </h2>
-    <button class="buy_button" mat-raised-button> Pedir Ahora</button>    <br/> 
-    <button class="onlyText_button" mat-button> Política de envío</button>
-
+    <p [innerHtml]="productData.description"></p>
+    <div class="product_values">
+      <mat-form-field>
+        <mat-label>Cantidad</mat-label>
+        <mat-select #fontSize value="16px" color="dark" [(ngModel)]="selectedQuantity"
+          (selectionChange)="onQuantityChange()">
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="5">5</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <h2>
+        ${{publicPrice}}
+      </h2>
+      <button class="buy_button" mat-raised-button (click)="addToCart()"> Añadir al carrito</button> <br />
+      <button class="see_cart_button" mat-raised-button [routerLink]="['/carrito']">
+        Ver Carrito
+        <i style="font-size: 15px;" class="material-icons">shopping_cart</i>
+      </button> <br />
+      <button class="onlyText_button" mat-button (click)="openDialog(3)"> Política de envío</button>
+    </div>
+    <div class="product_uses_mobile">
+      <h1>
+        Sobre su uso
+      </h1>
+      <p [innerHtml]="productData.howToUse"></p>
+    </div>
   </div>
 </div>
 <div class="footer">
   <div>
-    <a href="">
+    <a (click)="openDialog(2)">
       <h5>Contacto</h5>
     </a>
   </div>
   <div>
-    <a href="">
-      <h5>Politica de envíos</h5>
+    <a (click)="openDialog(3)">
+      <h5>Política de envíos</h5>
     </a>
   </div>
   <div>
-    <a href="">
+    <a (click)="openDialog(4)">
       <h5>Sobre nosotros</h5>
     </a>
   </div>

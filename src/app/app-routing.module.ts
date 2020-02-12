@@ -4,10 +4,11 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RepairOrdersComponent } from './repair-orders/repair-orders.component';
+import { MyCartComponent } from './my-cart/my-cart.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'online-store',
+    path: '', redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
@@ -17,10 +18,13 @@ const routes: Routes = [
     path: 'repair-orders', component: RepairOrdersComponent
   },
   {
-    path: 'online-store', component: OnlineStoreComponent
+    path: 'inicio', component: OnlineStoreComponent
   },
   {
     path: 'product-item/:id', component: ProductItemComponent
+  },
+  {
+    path: 'carrito', component: MyCartComponent
   },
 ];
 
