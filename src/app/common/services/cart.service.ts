@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { GeneralCartModel, ItemCartModel } from '../Models/GeneralModels';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { CART_CONSTANTS } from '../constants/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   /**
    * This adds an object to the cart
@@ -66,6 +68,38 @@ export class CartService {
     if (!duplicatedId) {
       this.addToCart(object);
     }
+  }
+
+  /**
+   * This calls the Payphone API for the payment
+   *
+   * @param {*} totalPrice
+   * @param {*} clientPhoneNumber
+   * @param {*} clientMail
+   * @returns
+   * @memberof CartService
+   */
+  payPhoneCall(totalPrice, clientPhoneNumber, clientMail) {
+    const body = {
+
+      "amount": totalPrice,
+      "amountWithoutTax": totalPrice,
+      "clientTransactionId": clientPhoneNumber,
+      "responseUrl": "https://cannabidiolecuador.com/inicio",
+      "phoneNumber": clientPhoneNumber,
+      "email": clientMail,
+      "optionalParameter": "https://cannabidiolecuador.com/inicio",
+      "documentId": "string"
+
+    };
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + CART_CONSTANTS.PAYPHONE_BEAR
+      })
+    };
+    return this.http.post('https://pay.payphonetodoesposible.com/api/button/Prepare', body, httpOptions);
   }
 
 }

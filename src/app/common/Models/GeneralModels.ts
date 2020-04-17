@@ -29,3 +29,19 @@ export class ItemCartModel {
 	productQuantity: number;
 	productPrice: number;
 }
+
+export class ClientModel {
+	clientName: string;
+	clientLastname: string;
+	clientPhoneNumber: string;
+	clientMail: string;
+	clientCity: string;
+	clientAddress1: string;
+	clientAddress2: string;
+}
+
+export class RequestModel {
+	clientData: ClientModel;
+	productsDescription: string;
+	total: string;
+}

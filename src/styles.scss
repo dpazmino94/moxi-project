@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 $theme_gray: #575859;
 $theme_dark_green: #72A624;
 $theme_light_green: #BED996;
@@ -121,9 +120,19 @@ a {
 		background-color: $theme_black;
 		color: $theme_white;
 	}
-	
+
 	.onlyText_button {
 		width: 10rem;
+	}
+
+	.transfer_text {
+		font-size: 15px;
+	}
+
+	.transfer_button {
+		width: 12rem;
+		background-color: $theme_dark_green;
+		color: $theme_white;
 	}
 
 	.ui-galleria-filmstrip-wrapper {
@@ -259,4 +268,13 @@ a {
 	width      : 100% !important;
 	height     : 100% !important;
 	object-fit : contain !important;
-  }
+}
+
+.cart_client_data {
+	width: 100%;
+    padding: 0px 20% 0 0;
+}
+
+.mat-focused .mat-form-field-label {
+	color: $theme_dark_green !important;
+}

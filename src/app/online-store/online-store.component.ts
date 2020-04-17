@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { OnlineStoreProductModel } from '../common/Models/GeneralModels';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonDialogComponent } from '../common/dialog/common-dialog/common-dialog.component';
+import { Meta } from '@angular/platform-browser';
 
 
 
@@ -28,7 +29,8 @@ export class OnlineStoreComponent implements OnInit {
   constructor(
     public db: AngularFirestore,
     public router: Router,
-    public dialog: MatDialog, ) {
+    public dialog: MatDialog,
+    public meta: Meta ) {
     this.items = db.collection('productos').valueChanges();
   }
 

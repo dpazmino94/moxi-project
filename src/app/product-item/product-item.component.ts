@@ -8,7 +8,6 @@ import { CommonDialogComponent } from '../common/dialog/common-dialog/common-dia
 import { MatDialog } from '@angular/material/dialog';
 import { CartService } from '../common/services/cart.service';
 
-
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html'

@@ -49,9 +49,10 @@
     </table>
 
 
-    <button style="margin-bottom: 5%;" class="buy_button" mat-raised-button [routerLink]="['/inicio']" (click)="removeCartItems()">
-      <i class="material-icons">remove_shopping_cart</i>
+    <button style="margin-bottom: 5%;" class="see_cart_button" mat-raised-button [routerLink]="['/inicio']"
+      (click)="removeCartItems()">
       Vaciar carrito
+      <i style="font-size: 15px;" class="material-icons">remove_shopping_cart</i>
     </button> <br />
 
   </div>
@@ -60,16 +61,47 @@
   <div class="product_col2">
     <div [hidden]="numberSaved">
       <mat-card class="input_phone">
-        <h3>Escribe tu número de telefono para continuar con la compra:</h3>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="0991234567" [(ngModel)]="clientPhoneNumber" name="userName">
-        </mat-form-field>
+        <h3>Llena tus datos para realizar tu pago</h3>
+        <h5> Puedes escoger entre dos opciones de pago: 
+          <br /><span class="transfer_text">- Tarjeta de Crédito</span> 
+          <br /><span class="transfer_text">- Depósito/Transferencia</span>
+          <br /><br /> Asegurate de llenar los datos correctamente para realizar el envío de tus
+          productos, no dudes en contactarnos si tienes alguna duda.</h5>
         <div>
-          <button class="buy_button" mat-raised-button (click)="savePhoneNumber()"> Continuar</button> <br />
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Nombre" [(ngModel)]="client.clientName" name="clientName">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Apellido" [(ngModel)]="client.clientLastname" name="clientLastname">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Teléfono" [(ngModel)]="client.clientPhoneNumber" name="clientPhoneNumber">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <input matInput placeholder="Correo electrónico" [(ngModel)]="client.clientMail" name="clientMail">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Ciudad" [(ngModel)]="client.clientCity" name="clientCity">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Calle principal - número de casa" [(ngModel)]="client.clientAddress1" name="clientAddress1">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Calle secundaria" [(ngModel)]="client.clientAddress2" name="clientAddress2">
+          </mat-form-field>
+        </div>
+        <div>
+          <button class="transfer_button" style="width: 15rem;" mat-raised-button (click)="payPhoneRedirect()">
+            Tarjeta de Crédito / Payphone 
+            <span class="material-icons"> payment </span>
+          </button> <br />
+          <button class="see_cart_button" style="width: 15rem;" mat-raised-button (click)="openTransferModal()">
+            Depósito / Transferencia
+            <span class="material-icons">monetization_on</span>
+          </button> <br />
         </div>
       </mat-card>
     </div>
-    <div [hidden]="!numberSaved" #paypal></div>
   </div>
 </div>
 <div class="footer">
