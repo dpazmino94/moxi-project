@@ -31,13 +31,17 @@ export class ItemCartModel {
 }
 
 export class ClientModel {
-	clientName: string;
-	clientLastname: string;
+	clientFirstName: string;
+	clientSecondName: string;
+	clientFirstLastname: string;
+	clientSecondLastname: string;
+	clientId: string;
 	clientPhoneNumber: string;
 	clientMail: string;
 	clientCity: string;
 	clientAddress1: string;
 	clientAddress2: string;
+	clientReference: string;
 }
 
 export class RequestModel {

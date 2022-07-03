@@ -36,6 +36,7 @@ export class OnlineStoreComponent implements OnInit {
 
   ngOnInit() {
     this.getScreenSize();
+    //this.tempCreate()
     this.items.subscribe(data => {
       this.productsCatalogData = [];
       data.forEach(element => {
@@ -56,10 +57,10 @@ export class OnlineStoreComponent implements OnInit {
   tempCreate() {
     const itemRef = this.db.collection('productos');
     itemRef.add({
-      description: 'Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto prueba Texto pruebaTexto pruebaTexto prueba Texto prueba Texto prueba Texto prueba Texto prueba ',
-      howToUse: 'Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 Texto prueba 2 ',
-      images: ['https://i.imgur.com/38Yaapq.jpg'],
-      nombre: 'Testosterone Booster',
+      description: 'Nuestro bálsamo de CBD Relief + Recovery es una mezcla vigorizante de extracto de cáñamo de espectro completo e ingredientes funcionales como capsaicina y mentol, elaborado para aliviar dolores y molestias con su sensación refrescante/caliente. Nuestras fórmulas de bálsamo nuevas y mejoradas brindan un alivio sostenido del dolor muscular y la inflamación localizados, al mismo tiempo que nutren la piel y brindan apoyo a su cuerpo y mente. Este tópico profundamente refrescante combina bien con estilos de vida activos y recuperación sobre la marcha.<br/><br/>Ingredientes: Cera Alba orgánica (cera de abeja), aceite de semilla de Simmondsia Chinensis (jojoba) orgánico, aceite de semilla de Helianthus Annuus (girasol) orgánico, mantequilla de semilla de Mangifera Indica (mango) orgánica, lanolina, extracto de cáñamo de espectro completo, mentol, aceite de corteza de Cinnamomum Camphora, Aceite de Ocimum basilicum (albahaca dulce), aceite de hoja natural de Gaultheria procumbens (gaulteria), miristato de isopropilo, extracto de Capsicum annuum. Fabricado en una instalación que procesa frutos secos.',
+      howToUse: 'Consulte a su médico antes de usar si le han desaconsejado comer toronja. No lo use si el sello de seguridad está roto. Sólo para uso externo<br/><br/>Aplicar según sea necesario en las áreas objetivo para un alivio duradero. Nuestros bálsamos son probados por terceros para potencia, pesticidas y metales pesados. Nuestro proceso de prueba garantiza que ofrecemos un producto que es natural, seguro y consistente. Todos los resultados de las pruebas están disponibles en la pestaña Resultados de la prueba.',
+      images: ['https://i.imgur.com/WNl3tHj.jpg', 'https://i.imgur.com/FgWRwIj.jpg', 'https://i.imgur.com/rDvGiu4.jpg'],
+      nombre: 'CBD Balm - Relief + Recovery',
       precio: '9.99',
     });
 
@@ -120,3 +121,13 @@ export class OnlineStoreComponent implements OnInit {
 // COMMANDS FOR DEPLOY:
 // ng build --base-href https://dpazmino94.github.io/moxi-project/
 // ngh
+
+
+//https://i.imgur.com/eJPUP44.jpg
+
+
+
+
+
+
+

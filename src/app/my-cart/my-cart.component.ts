@@ -135,9 +135,10 @@ export class MyCartComponent implements OnInit {
 
   validateEmptyClientData() {
   if(
-    this.client.clientName && 
-    this.client.clientLastname && 
+    this.client.clientFirstName && 
+    this.client.clientFirstLastname && 
     this.client.clientPhoneNumber && 
+    this.client.clientId && 
     this.client.clientMail && 
     this.client.clientCity && 
     this.client.clientAddress1 && 
@@ -161,7 +162,7 @@ export class MyCartComponent implements OnInit {
     if(this.validateEmptyClientData()) {
       if(this.validateClientMail()) {
         this.cartService
-        .payPhoneCall(this.totalPrice, this.client.clientPhoneNumber, this.client.clientMail)
+        .payPhoneCall((this.totalPrice * 100), this.client.clientPhoneNumber, this.client.clientMail)
         .subscribe((response: any) => {
           console.log(response.payWithPayPhone);
           window.location.href = response.payWithPayPhone;
@@ -181,7 +182,7 @@ export class MyCartComponent implements OnInit {
         width: '550px',
         data: {
           title: 'Error!',
-          message: 'Todos los datos deben estar llenos para realizar tu pago por tarjeta de crédito'
+          message: 'Todos los datos con * deben estar llenos para realizar tu pago por tarjeta de crédito'
         }
       });
       dialogRef.afterClosed();
@@ -189,3 +190,6 @@ export class MyCartComponent implements OnInit {
   }
 
 }
+
+
+//https://social.msdn.microsoft.com/Forums/lync/es-ES/fe88048d-f803-481b-87b1-f1b2e43ec40f/consumo-de-servicios-web-sri-ecuador-para-facturacin-electrnica?forum=vcses

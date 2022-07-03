@@ -69,25 +69,37 @@
           productos, no dudes en contactarnos si tienes alguna duda.</h5>
         <div>
           <mat-form-field class="cart_client_data">
-            <input matInput placeholder="Nombre" [(ngModel)]="client.clientName" name="clientName">
+            <input matInput placeholder="Primer nombre*" [(ngModel)]="client.clientFirstName" name="clientName">
           </mat-form-field>
           <mat-form-field class="cart_client_data">
-            <input matInput placeholder="Apellido" [(ngModel)]="client.clientLastname" name="clientLastname">
+            <input matInput placeholder="Segundo nombre" [(ngModel)]="client.clientSecondName" name="clientName">
           </mat-form-field>
           <mat-form-field class="cart_client_data">
-            <input matInput placeholder="Teléfono" [(ngModel)]="client.clientPhoneNumber" name="clientPhoneNumber">
+            <input matInput placeholder="Primer apellido*" [(ngModel)]="client.clientFirstLastname" name="clientLastname">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Segundo apellido" [(ngModel)]="client.clientSecondLastname" name="clientLastname">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Cédula*" [(ngModel)]="client.clientId" name="clientLastname">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Teléfono*" [(ngModel)]="client.clientPhoneNumber" name="clientPhoneNumber">
           </mat-form-field>
           <mat-form-field class="cart_client_data" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-            <input matInput placeholder="Correo electrónico" [(ngModel)]="client.clientMail" name="clientMail">
+            <input matInput placeholder="Correo electrónico*" [(ngModel)]="client.clientMail" name="clientMail">
           </mat-form-field>
           <mat-form-field class="cart_client_data">
-            <input matInput placeholder="Ciudad" [(ngModel)]="client.clientCity" name="clientCity">
+            <input matInput placeholder="Ciudad*" [(ngModel)]="client.clientCity" name="clientCity">
           </mat-form-field>
           <mat-form-field class="cart_client_data">
-            <input matInput placeholder="Calle principal - número de casa" [(ngModel)]="client.clientAddress1" name="clientAddress1">
+            <input matInput placeholder="Calle principal* - número de casa" [(ngModel)]="client.clientAddress1" name="clientAddress1">
           </mat-form-field>
           <mat-form-field class="cart_client_data">
-            <input matInput placeholder="Calle secundaria" [(ngModel)]="client.clientAddress2" name="clientAddress2">
+            <input matInput placeholder="Calle secundaria*" [(ngModel)]="client.clientAddress2" name="clientAddress2">
+          </mat-form-field>
+          <mat-form-field class="cart_client_data">
+            <input matInput placeholder="Referencia" [(ngModel)]="client.clientReference" name="clientAddress2">
           </mat-form-field>
         </div>
         <div>

@@ -84,7 +84,7 @@ export class CartService {
 
       "amount": totalPrice,
       "amountWithoutTax": totalPrice,
-      "clientTransactionId": clientPhoneNumber,
+      "clientTransactionId": clientPhoneNumber + new Date().getTime(),
       "responseUrl": "https://cannabidiolecuador.com/inicio",
       "phoneNumber": clientPhoneNumber,
       "email": clientMail,
