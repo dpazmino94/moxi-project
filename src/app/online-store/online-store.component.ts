@@ -119,8 +119,8 @@ export class OnlineStoreComponent implements OnInit {
 
 }
 // COMMANDS FOR DEPLOY:
-// ng build --base-href https://dpazmino94.github.io/moxi-project/
-// ngh
+// ng build
+// firebase deploy
 
 
 //https://i.imgur.com/eJPUP44.jpg
