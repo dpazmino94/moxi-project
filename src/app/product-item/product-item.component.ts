@@ -1,16 +1,19 @@
-import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { HostListener } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { ProductItemModel, ItemCartModel } from '../common/Models/GeneralModels';
-import { TEXT_CONSTANTS } from '../common/constants/constants';
-import { CommonDialogComponent } from '../common/dialog/common-dialog/common-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
-import { CartService } from '../common/services/cart.service';
+import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from "@angular/core";
+import { HostListener } from "@angular/core";
+import { AngularFirestore } from "@angular/fire/firestore";
+import {
+  ProductItemModel,
+  ItemCartModel,
+} from "../common/Models/GeneralModels";
+import { COMMON_CONSTANTS, TEXT_CONSTANTS } from "../common/constants/constants";
+import { CommonDialogComponent } from "../common/dialog/common-dialog/common-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { CartService } from "../common/services/cart.service";
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html'
+  selector: "app-product-item",
+  templateUrl: "./product-item.component.html",
 })
 export class ProductItemComponent implements OnInit {
   // Carousel of images array
@@ -23,20 +26,28 @@ export class ProductItemComponent implements OnInit {
   productId: string;
   constructor(
     private route: ActivatedRoute,
-     public db: AngularFirestore, 
-     public dialog: MatDialog,
-     private cartService: CartService) {
+    public db: AngularFirestore,
+    public dialog: MatDialog,
+    private cartService: CartService
+  ) {
     // This gets the firestore id param from the URL
-    this.route.params.subscribe(params => {
-      this.productId = params['id'];
+    this.route.params.subscribe((params) => {
+      this.productId = params["id"];
       // Firestore query
-      const docRef = db.collection("productos").doc(this.productId).valueChanges();
+      const docRef = db
+        .collection("productos")
+        .doc(this.productId)
+        .valueChanges();
       // This gets the data from the variable
       docRef.subscribe((data: any) => {
         // This parts gets the images from firestore and fills the galleria
         this.images = [];
         data.images.forEach((element, index) => {
-          this.images.push({ source: element, alt: 'Description for Image' + index, title: 'Title ' + index });
+          this.images.push({
+            source: element,
+            alt: "Description for Image" + index,
+            title: "Title " + index,
+          });
         });
         // This part gets all the info for the product
         this.productData.precio = data.precio;
@@ -64,19 +75,28 @@ export class ProductItemComponent implements OnInit {
         title = TEXT_CONSTANTS.ABOUT_TITLE;
         message = TEXT_CONSTANTS.ABOUT_MESSAGE;
         break;
+      case 5:
+        title = TEXT_CONSTANTS.TRANSFER_TITLE;
+        message = TEXT_CONSTANTS.TRANSFER_TEXT;
+        break;
     }
     const dialogRef = this.dialog.open(CommonDialogComponent, {
-      width: '550px',
+      width: "550px",
       data: {
         title: title,
-        message: message
-      }
+        message: message,
+      },
     });
     dialogRef.afterClosed();
   }
 
   onQuantityChange() {
-    this.publicPrice = Number(this.productData.precio) * Number(this.selectedQuantity);
+    this.publicPrice =
+      Number(this.productData.precio) * Number(this.selectedQuantity);
+  }
+
+  onWhatsAppClick() {
+    window.location.href = COMMON_CONSTANTS.WHATSAPP_URL
   }
 
   addToCart() {
@@ -84,20 +104,23 @@ export class ProductItemComponent implements OnInit {
     cartItem.productId = this.productId;
     cartItem.productName = this.productData.nombre;
     cartItem.productImage = this.images[0].source;
-    cartItem.productPrice = (this.publicPrice) ? this.publicPrice:  Number(this.productData.precio);
-    cartItem.productQuantity = ((this.selectedQuantity)) ? Number(this.selectedQuantity): 1;
+    cartItem.productPrice = this.publicPrice
+      ? this.publicPrice
+      : Number(this.productData.precio);
+    cartItem.productQuantity = this.selectedQuantity
+      ? Number(this.selectedQuantity)
+      : 1;
     this.cartService.readCartObject(cartItem);
     this.dialog.open(CommonDialogComponent, {
-      width: '550px',
+      width: "550px",
       data: {
-        title: 'Producto añadido al carrito exitosamente',
-        message: ''
-      }
+        title: "Producto añadido al carrito exitosamente",
+        message: "",
+      },
     });
   }
 
-  ngOnInit() { }
-
+  ngOnInit() {}
 }
 
 /*

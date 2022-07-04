@@ -48,10 +48,9 @@
       <h2>
         ${{publicPrice}}
       </h2>
-      <button class="buy_button" mat-raised-button (click)="addToCart()"> Añadir al carrito</button> <br />
-      <button class="see_cart_button" mat-raised-button [routerLink]="['/carrito']">
-        Ver Carrito
-        <i style="font-size: 15px;" class="material-icons">shopping_cart</i>
+      <button class="buy_button" mat-raised-button (click)="onWhatsAppClick()"> Comprar por WhatsApp</button> <br />
+      <button class="see_cart_button" mat-raised-button (click)="openDialog(5)">
+        Datos de Transferencia
       </button> <br />
       <button class="onlyText_button" mat-button (click)="openDialog(3)"> Política de envío</button>
     </div>
