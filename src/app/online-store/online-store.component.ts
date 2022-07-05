@@ -46,6 +46,7 @@ export class OnlineStoreComponent implements OnInit {
         mapData.productImage = element.images[0];
         mapData.productPrice = element.precio;
         mapData.productTitle = element.nombre;
+        mapData.productSubtitle = element.subtitle;
         mapData.productOrder = element.order;
         this.productsCatalogData.push(mapData);
         this.productsCatalogData = this.productsCatalogData.sort((a, b) => (a.productOrder > b.productOrder) ? 1 : -1);

@@ -9,9 +9,9 @@
           </span>
         </div>
         <span class="menu_spacer"></span>
-        <button mat-button [routerLink]="['/carrito']">
+        <!-- <button mat-button [routerLink]="['/carrito']">
           <i class="material-icons">shopping_cart</i>
-        </button>
+        </button> -->
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
@@ -29,9 +29,18 @@
     </div>
   </div>
   <div class="product_col2">
-    <h1>
+    <h6 class="product_title_small">
+      {{productData.titleSmall}}
+    </h6>
+    <h1 class="product_title">
       {{productData.nombre}}
     </h1>
+    <h3 class="product_subtitle">
+      {{productData.subtitle}}
+    </h3>
+    <h4 class="product_title_description">
+      {{productData.titleDescription}}
+    </h4>
     <p [innerHtml]="productData.description"></p>
     <div class="product_values">
       <mat-form-field>

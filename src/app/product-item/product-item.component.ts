@@ -53,6 +53,9 @@ export class ProductItemComponent implements OnInit {
         this.productData.precio = data.precio;
         this.publicPrice = Number(this.productData.precio);
         this.productData.nombre = data.nombre;
+        this.productData.subtitle = data.subtitle;
+        this.productData.titleSmall = data.titleSmall;
+        this.productData.titleDescription = data.titleDescription;
         this.productData.description = data.description;
         this.productData.howToUse = data.howToUse;
       });
@@ -102,6 +105,7 @@ export class ProductItemComponent implements OnInit {
   addToCart() {
     let cartItem: ItemCartModel = new ItemCartModel();
     cartItem.productId = this.productId;
+    cartItem.productName = this.productData.nombre;
     cartItem.productName = this.productData.nombre;
     cartItem.productImage = this.images[0].source;
     cartItem.productPrice = this.publicPrice

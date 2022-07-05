@@ -2,6 +2,7 @@ export class OnlineStoreProductModel {
 	productId: string;
 	productImage: string;
 	productTitle: string;
+	productSubtitle: string;
 	productDescription: string;
 	productHowToUse: string;
 	productPrice: string;
@@ -13,6 +14,9 @@ export class ProductItemModel {
 	howToUse: string;
 	images: Array<any>;
 	nombre: string;
+	subtitle: string;
+	titleSmall: string;
+	titleDescription: string;
 	precio: string;
 	order: number;
 }
@@ -25,6 +29,7 @@ export class GeneralCartModel {
 export class ItemCartModel {
 	productId: string;
 	productName: string;
+	productSubtitle: string;
 	productImage: string;
 	productQuantity: number;
 	productPrice: number;
