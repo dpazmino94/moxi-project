@@ -25,12 +25,15 @@
     <h1 class="product_title">Nuestros Productos</h1>
   </div>
   <div class="products_grid">
-    <div *ngFor="let product of productsCatalogData">
-      <div class="product_container" (click)="router.navigateByUrl('product-item/' + product.productId);">
+    <div class="flex flex_col_center" *ngFor="let product of productsCatalogData">
+      <mat-card class="product_container" (click)="router.navigateByUrl('product-item/' + product.productId);">
         <img [src]="product.productImage" alt="">
         <h3 class="product_title">{{product.productTitle}}</h3>
         <h3>${{product.productPrice}}</h3>
-      </div>
+        <div class="buy_now_button">
+          COMPRAR
+        </div>
+      </mat-card>
     </div>
   </div>
 </div>
