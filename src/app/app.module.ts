@@ -38,6 +38,8 @@ import { WhatIsCbdComponent } from './what-is-cbd/what-is-cbd.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { MenuComponent } from './menu/menu.component';
 import { SliderTextComponent } from './slider-text/slider-text.component';
+import { QualityProductsComponent } from './quality-products/quality-products.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { SliderTextComponent } from './slider-text/slider-text.component';
     HowItWorksComponent,
     MenuComponent,
     SliderTextComponent,
+    QualityProductsComponent,
+    FooterComponent,
   ],
   exports: [
     MatFormFieldModule

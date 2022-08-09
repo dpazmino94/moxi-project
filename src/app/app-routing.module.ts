@@ -6,6 +6,7 @@ import { MyCartComponent } from './my-cart/my-cart.component';
 import { MoreInfoComponent } from './more-info/more-info.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { WhatIsCbdComponent } from './what-is-cbd/what-is-cbd.component';
+import { QualityProductsComponent } from './quality-products/quality-products.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: 'que-es-cbd', component: WhatIsCbdComponent
+  },
+  {
+    path: 'productos-de-calidad', component: QualityProductsComponent
   },
   {
     path: 'carrito', component: MyCartComponent
