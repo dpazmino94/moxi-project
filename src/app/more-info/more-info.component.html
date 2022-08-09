@@ -1,0 +1,67 @@
+<div class="more_info_container">
+  <div class="online_store_banner">
+    <div class="online_store_banner_layer">
+      <mat-toolbar>
+        <div class="banner_content" [routerLink]="['/inicio']" >
+          <img class="banner_logo" src="https://i.imgur.com/sGB2JwW.png" alt="">
+          <span class="banner_text" style="color: #FFF;"><p>CBD Cuenca Ecuador</p></span>
+        </div>
+        <div class="banner_add">
+        </div>
+        <span class="menu_spacer"></span>
+        <app-menu isWhite="true"></app-menu>
+      </mat-toolbar>
+    </div>
+  </div>
+  <div class="products_title" style="margin: 2rem ;">
+    <h2 class="product_title">SOBRE NOSOTROS</h2>
+  </div>
+  <div class="more_info_text">
+    Nuestro CBD Lazaros naturales está considerado entre las 12 mejores marcas de CBD de los Estados Unidos, gozando de
+    gran reputación.
+    <br /><br />
+   
+    <img class="more_info_img" src="https://i.imgur.com/GkQ0T1u.jpg" alt="">
+
+    Desde nuestras prácticas agrícolas y procesos de producción, hasta cómo se empaquetan nuestros productos, siempre
+    buscamos formas de hacer negocios ambiental y socialmente responsables. Por ejemplo, cada pedido se embala en
+    nuestras instalaciones con materiales fabricados a partir de residuos posconsumo. Nuestro objetivo actual es ser
+    neutrales en carbono para 2030, con el objetivo a largo plazo de eliminar por completo todos los desechos no
+    biodegradables y las emisiones de carbono para 2040.
+    <img class="more_info_img" src="https://i.imgur.com/xRLl43k.jpg" alt="">
+    Nuestra misión siempre ha sido fabricar productos que mejoren la vida de las personas, así como el mundo que nos
+    rodea, operando de manera justa, equitativa y ambientalmente sostenible. Nuestros esfuerzos con este fin nos han
+    llevado a recibir las certificaciones USDA Organic , Leaping Bunny y B Corp. Lazarus Naturals se compromete a
+    utilizar los negocios como una fuerza para el bien y nunca poner las ganancias por encima del propósito. No se trata
+    de ser el mejor del mundo, sino de hacer lo mejor para el mundo.
+    <br /><br />
+    Desde el principio, nos hemos dedicado a hacer CBD eficaz y de alta calidad.
+    Lazarus Naturals se fundó con la creencia de que el CBD tiene un impacto positivo en nuestra calidad de vida y
+    debería estar disponible para todos.
+
+    <img class="more_info_img" src="https://i.imgur.com/9e068Pf.jpg" alt="">
+    <h3 class="product_title" style="margin: 2rem 0 ;"> NADA QUE ESCONDER</h3>
+    No hay ningún secreto en nuestro enfoque. Desde el cáñamo orgánico que cultivamos hasta nuestra familia de productos
+    en constante crecimiento, nos enfocamos en la consistencia y la sustentabilidad. Siempre estamos trabajando para
+    mejorar nuestros procesos para hacer los productos más efectivos y saludables.
+    <br /><br />
+
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a (click)="openDialog(2)">
+      <h5>Contacto</h5>
+    </a>
+  </div>
+  <div>
+    <a (click)="openDialog(3)">
+      <h5>Política de envíos</h5>
+    </a>
+  </div>
+  <div>
+    <a (click)="router.navigateByUrl('/inicio')">
+      <h5>Inicio</h5>
+    </a>
+  </div>
+</div>

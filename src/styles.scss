@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 $theme_gray: #575859;
-$theme_dark_green: #72A624;
+$theme_dark_green: #6fa088;
 $theme_light_green: #BED996;
 $theme_white: #F2F2F2;
 $theme_black: #262626;
@@ -8,6 +8,14 @@ $mobile_size: 435px;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-menu-content:not(:empty) { 
+    background-color: #6FA087;
+}
+
+.mat-menu-item {
+	color: #FFF !important;
+}
 
 app-login-page mat-card {
 	margin: 10% 30% 30% 30%;
@@ -23,8 +31,18 @@ table {
 	text-align: center;
 }
 
+.flex {
+	display: flex;
+}
+
+.justify_center{
+	justify-content: center;
+}
+
 .product_container img {
-	width: 6rem;
+	width: 75%;
+    height: 220px;
+    object-fit: cover;
 }
 .product_body img {
 	width: 100%;
@@ -41,15 +59,15 @@ a {
 
 //=============== Online Store Page ===============
 .online_store_banner {
-	height: 18rem;
-	background-image: url('assets/images/banner_photo.jpg');
-    background-size: cover;
+	height: 25rem;
+	background-image: url('https://i.imgur.com/iPds1Jz.png');
+    background-size: contain;
     background-repeat: no-repeat;
 	background-position-y: -12rem;
 	background-attachment: fixed;
 	position: relative;
 	.online_store_banner_layer {
-		background-color: rgba(33, 33, 33, 0.7);
+		// background-color: rgba(33, 33, 33, 0.7);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -61,6 +79,25 @@ a {
 		}
 	}
 }
+
+.more_info_container .online_store_banner {
+	background-image: url('https://i.imgur.com/kKmgWpA.jpg');
+}
+
+.what_is .what_is_banner {
+	background-image: url('https://i.imgur.com/4AjZ5D9.png');
+	height: 17rem;
+    background-position: center;
+    background-size: cover;
+}
+
+.how_works_container .how_works_banner {
+	background-image: url('https://i.imgur.com/q5szYuV.png');
+    height: 19rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .products_title {
 	text-align: center;
 	margin: 3rem 0;
@@ -68,6 +105,7 @@ a {
 
 .product_container{
 	text-align: center;
+	margin-bottom: 5rem;
 }
 
 .banner_content {
@@ -79,15 +117,14 @@ a {
 	.banner_text {
 		margin: -10px 0 -10px 15px;
 		position: absolute;
+		color: black;
+		font-weight: 400;
 	}	
 }
 
 .banner_add {
 	margin: 9rem 0 0 4%;
-	position: absolute;
 	display: flex;
-	top: -8.5rem;
-	right: 17rem;
 	.banner_add_image {
 		width: 40%;
 		height: 40%;
@@ -101,9 +138,15 @@ a {
 	}
 }
 @media (max-width: $mobile_size) {
-	.banner_add {
-		top: -3.75rem;
-		right: 0;
+	.online_store_banner{
+	height: 25rem;
+    background-image: url(https://i.imgur.com/iPds1Jz.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 0; 
+    background-attachment: initial;
+    position: relative;
+    background-position-x: -19rem;
 	}
 }
 
@@ -111,7 +154,7 @@ a {
 //=============== Product Item Page ===============
 .product_title {
 	color: #115b02;
-	margin: 0rem 0;
+	margin: 1rem 0;
 }
 .product_title_small {
 	margin: 0.5rem 0;
@@ -303,4 +346,48 @@ a {
 
 .mat-focused .mat-form-field-label {
 	color: $theme_dark_green !important;
+}
+
+//=============== MORE INFO ===============
+.more_info_text {
+	padding: 1.5rem ;
+	padding-bottom: 2.5rem;
+}
+
+.more_info_img {
+	width: 100%;
+	margin: 1rem 0;
+}
+
+.mat-tab-body-content img {
+    width: 100%;
+}
+
+.cbd_title {
+	font-size: 2rem;
+	width: 100%;
+	text-align: center;
+	margin: 1rem 0;
+	font-weight: 500;
+}
+
+.cbd_content {
+	padding: 0 2rem;
+	text-align: center;
+	font-weight: 700;
+}
+
+.mat-tab-label .mat-tab-label-content {
+	font-weight: bolder;
+	color: black;
+}
+
+.square_content {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+    background-color: #E2DBCC;
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 2rem;
 }

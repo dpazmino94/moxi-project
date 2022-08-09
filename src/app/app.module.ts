@@ -16,6 +16,7 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
 
 // Prime NG Imports
 import { GalleriaModule } from 'primeng/galleria';
@@ -30,6 +31,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { MyCartComponent } from './my-cart/my-cart.component';
+import { GridBannerComponent } from './grid-banner/grid-banner.component';
+import { OverlapImageComponent } from './overlap-image/overlap-image.component';
+import { MoreInfoComponent } from './more-info/more-info.component';
+import { WhatIsCbdComponent } from './what-is-cbd/what-is-cbd.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { MenuComponent } from './menu/menu.component';
+import { SliderTextComponent } from './slider-text/slider-text.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +46,13 @@ import { MyCartComponent } from './my-cart/my-cart.component';
     OnlineStoreComponent,
     ProductItemComponent,
     MyCartComponent,
+    GridBannerComponent,
+    OverlapImageComponent,
+    MoreInfoComponent,
+    WhatIsCbdComponent,
+    HowItWorksComponent,
+    MenuComponent,
+    SliderTextComponent,
   ],
   exports: [
     MatFormFieldModule
@@ -57,6 +72,7 @@ import { MyCartComponent } from './my-cart/my-cart.component';
     MatMenuModule,
     MatToolbarModule,
     MatSelectModule,
+    MatTabsModule,
     GalleriaModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,

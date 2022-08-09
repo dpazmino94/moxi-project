@@ -3,6 +3,9 @@ import { OnlineStoreComponent } from './online-store/online-store.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MyCartComponent } from './my-cart/my-cart.component';
+import { MoreInfoComponent } from './more-info/more-info.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { WhatIsCbdComponent } from './what-is-cbd/what-is-cbd.component';
 
 const routes: Routes = [
   {
@@ -14,6 +17,15 @@ const routes: Routes = [
   },
   {
     path: 'product-item/:id', component: ProductItemComponent
+  },
+  {
+    path: 'mas-info', component: MoreInfoComponent
+  },
+  {
+    path: 'como-funciona', component: HowItWorksComponent
+  },
+  {
+    path: 'que-es-cbd', component: WhatIsCbdComponent
   },
   {
     path: 'carrito', component: MyCartComponent

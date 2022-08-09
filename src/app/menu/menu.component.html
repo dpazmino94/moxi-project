@@ -1,0 +1,21 @@
+<button mat-button [matMenuTriggerFor]="menu">
+  <img *ngIf="!isWhite" src="https://i.imgur.com/36htKcU.png" width="20"> 
+  <img *ngIf="isWhite" src="https://i.imgur.com/W7KFyEU.png" width="40">
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['/inicio']">
+    Inicio
+  </button>
+  <button mat-menu-item [routerLink]="['/mas-info']">
+    Sobre Nosotros
+  </button>
+  <button mat-menu-item [routerLink]="['/como-funciona']">
+    Como funciona
+  </button>
+  <button mat-menu-item [routerLink]="['/que-es-cbd']">
+    Que es el CBD
+  </button>
+  <button mat-menu-item [routerLink]="['/inicio']">
+    Productos de Calidad
+  </button>
+</mat-menu>

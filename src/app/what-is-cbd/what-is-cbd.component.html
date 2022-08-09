@@ -1,0 +1,80 @@
+<div class="what_is">
+  <div class="what_is_banner">
+    <div class="online_store_banner_layer">
+      <mat-toolbar style="background: transparent;">
+        <div class="banner_content" [routerLink]="['/inicio']">
+          <img class="banner_logo" src="https://i.imgur.com/sGB2JwW.png" alt="">
+          <span class="banner_text" style="color: #FFF;">
+            <p>CBD Cuenca Ecuador</p>
+          </span>
+        </div>
+        <div class="banner_add">
+        </div>
+        <span class="menu_spacer"></span>
+        <app-menu isWhite="true"></app-menu>
+      </mat-toolbar>
+    </div>
+  </div>
+  <div style="
+      padding: 40px 40px;
+      background-color: #034225;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.5rem;
+  ">
+    Hay mucha confusión sobre qué es el CBD, qué hace y en qué se diferencia del cannabis. Antes de considerar el uso de
+    productos de CBD, es importante comprender los conceptos básicos.
+  </div>
+  <div class="products_title" style="margin: 2rem ;">
+    <h2 class="product_title">Que es el CBD</h2>
+  </div>
+  <img style=" width: 100%; margin-bottom: 2rem;" src="https://i.imgur.com/Ck8xGpy.png" alt="">
+
+  <app-slider-text></app-slider-text>
+
+  <div style="margin-top: 2rem;" class="more_info_text">
+    <div class="products_title" style="margin: 2rem ;">
+      <h2 class="product_title">
+        EL SISTEMA ENDOCANNABINOIDE (SEC)
+      </h2>
+    </div>
+    <div class="cbd_content">
+      El SEC envía señales a las células del cuerpo para que ayuden con la actividad fisiológica y cognitiva.
+    </div>
+    <div>
+      <img style="width: 100%; margin: 2rem 0;" src="https://i.imgur.com/9NMQwo3.png">
+    </div>
+    <div class="flex justify_center">
+      <div class="square_content">
+        Tomados solos, cada cannabinoide puede producir diferentes efectos en el cuerpo, pero tomados en conjunto, los
+        cannabinoides pueden funcionar en sinergia para mejorar los beneficios funcionales de la planta de cannabis en
+        general.
+
+        Las formulaciones de espectro completo están lo más cerca posible de la naturaleza. El extracto de cáñamo de
+        toda
+        la planta contiene todos los cannabinoides, terpenos y varios otros compuestos naturales que funcionan mejor
+        juntos, comúnmente conocido como el "efecto séquito".
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a (click)="openDialog(2)">
+      <h5>Contacto</h5>
+    </a>
+  </div>
+  <div>
+    <a (click)="openDialog(3)">
+      <h5>Política de envíos</h5>
+    </a>
+  </div>
+  <div>
+    <a [routerLink]="['/inicio']">
+      <h5>Inicio</h5>
+    </a>
+  </div>
+</div>

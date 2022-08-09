@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  article {
+    position: relative;
+    display: grid;
+  
+    & > * {
+      grid-row-start: 1;
+      grid-column-start: 1;
+    }
+  
+    img {
+      width: 100%;
+    }
+  
+    header {
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      background: rgba(#000, 0.45);
+      color: #fff;
+    }
+  }
+  
