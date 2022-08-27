@@ -1,7 +1,12 @@
-<h1 mat-dialog-title [innerHtml]="data.title"></h1>
+<div class="dialog_title">
+  <h1 class="product_title" mat-dialog-title [innerHtml]="data.title"></h1>
+</div>
+<div class="dialog_image">
+  <img src="https://i.imgur.com/PRh2SUj.png" alt="">
+</div>
 <div class="dialog" mat-dialog-content>
   <p [innerHtml]="data.message"></p>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-button (click)="onNoClick()">Cerrar</button>
+  <button class="dialog_button" mat-button (click)="onNoClick()">Cerrar</button>
 </div>

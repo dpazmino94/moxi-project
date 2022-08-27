@@ -302,7 +302,35 @@ a {
 }
 
 .dialog p img {
-	width: 100%; padding: 0 10% 0;
+	width: 10%;
+}
+
+app-common-dialog h1 {
+	display: flex !important;
+	align-items: center;
+	img {
+		width: 10%;
+		margin-bottom: 7px;
+		margin-left: 0.5rem;
+	}
+}
+.dialog_title, .dialog_image {
+	display: flex;
+	justify-content: center;
+}
+.dialog_image img {
+	width: 50%;
+}
+.dialog_button {
+	background-color: $theme_dark_green;
+}
+
+.mat-tab-label .mat-tab-label-content {
+	font-size: 1.25rem !important;
+    color: black !important;
+}
+.mat-tab-label {
+	opacity: 1 !important;
 }
 
 //=============== My Cart Page ===============
